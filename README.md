@@ -40,6 +40,8 @@ Every push to `main` updates the GitHub Pages website. No compilation, package i
 | <img src="assets/project-logos/autonomous-irrigation.webp" width="52" alt="Autonomous irrigation logo"> | Autonomous Irrigation | Distributed sensing and moisture-driven control | Microcontrollers, PWM, sensors |
 | <img src="assets/project-logos/connect-four-ai.webp" width="52" alt="Connect Four AI logo"> | Connect Four AI Agent | Adversarial search and board-state evaluation | Python, algorithms, game AI |
 
+All project identities are stored as optimized WebP assets with alpha-transparent backgrounds.
+
 ## Engineering focus
 
 - **Robotics and control:** ROS/ROS2, Gazebo, SLAM, sensor fusion, MPC and PID
