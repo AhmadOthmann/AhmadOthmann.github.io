@@ -10,7 +10,7 @@ I build robotic systems where autonomy software meets real hardware. My work spa
 
 This repository is the source of the public portfolio at [`ahmadothmann.github.io`](https://ahmadothmann.github.io/). GitHub Pages serves the static files directly from the repository.
 
-- Plain HTML, CSS and JavaScript—no proprietary runtime or backend
+- Plain HTML, CSS and JavaScript, with no proprietary runtime or backend
 - Responsive and keyboard-accessible
 - Restrictive Content Security Policy
 - No cookies, analytics, trackers, forms, third-party scripts or secrets
