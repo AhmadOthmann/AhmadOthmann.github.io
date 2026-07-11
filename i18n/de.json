@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "title": "Ahmed Othman | Ingenieur für Robotik und Physical AI",
+    "description": "Portfolio von Ahmed Othman mit Projekten aus Robotik, Autonomie, Regelungstechnik und Embedded Systems.",
+    "siteName": "Ahmed Othman, Engineering-Portfolio"
+  },
+  "nav": {
+    "label": "Hauptnavigation",
+    "homeLabel": "Startseite von Ahmed Othman",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "about": "Über mich",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "status": "Offen für Werkstudentenstellen und Forschungspositionen",
+    "eyebrow": "MECHATRONIK / AUTONOMIE / MÜNCHEN",
+    "firstName": "Ahmed",
+    "lastName": "Othman",
+    "title": "Ingenieur für Robotik und Physical AI",
+    "lede": "Ich entwickle intelligente Maschinen an der Schnittstelle von lernbasierter Autonomie und deterministischer Hardware.",
+    "primaryAction": "Projekte entdecken",
+    "secondaryAction": "Über mich",
+    "coreStackLabel": "KERNTECHNOLOGIEN",
+    "coreStack": "ROS2 · Python · C++ · MATLAB/Simulink · Regelungstechnik · Embedded Systems",
+    "diagramLabel": "Abstraktes Schema eines Robotiksystems",
+    "telemetryJoint": "J1 +034.2°",
+    "telemetryControl": "CTRL 500 Hz",
+    "telemetryState": "STATUS / NOMINAL"
+  },
+  "filters": {
+    "label": "Projekte filtern",
+    "all": "Alle",
+    "robotics": "Robotik",
+    "control": "Regelungstechnik",
+    "ai": "KI",
+    "embedded": "Embedded Systems"
+  },
+  "sections": {
+    "projects": {
+      "eyebrow": "AUSGEWÄHLTE PROJEKTE / 2020 BIS 2026",
+      "title": "Ausgewählte Engineering-Projekte",
+      "intro": "Systeme aus Simulation, Regelungstechnik, Elektronik und physischem Prototyping."
+    },
+    "experience": {
+      "eyebrow": "PRAXISSTATIONEN",
+      "title": "Von Industriesystemen zur Autonomie"
+    }
+  },
+  "projects": {
+    "atlas": {
+      "title": "Sofia Atlas Travel",
+      "summary": "Ein autonomer, mehrsprachiger KI-Vertriebsagent für Reisen mit Lead-Qualifizierung, Ergebnisrouting und Operator-Dashboard.",
+      "detail": "Entwickelt für die HappyRobot-Challenge des TUM.ai Makeathons. Sofia qualifiziert eingehende Anrufer in vier Sprachen, extrahiert 14 strukturierte Lead-Felder, leitet Ergebnisse an die passenden Workflows weiter, plant Rückrufe und überträgt Qualifizierungsereignisse an ein abgesichertes Mission-Control-Dashboard.",
+      "action": "Repository ansehen",
+      "stack": [
+        "HappyRobot",
+        "Next.js",
+        "KI-Agenten",
+        "Webhooks"
+      ]
+    },
+    "ackermann": {
+      "title": "Autonomes Ackermann-Fahrzeug",
+      "summary": "Ein ROS-basiertes autonomes Fahrzeug, das Lokalisierung, Pfadverfolgung und eingebettete Aktorsteuerung kombiniert.",
+      "detail": "Pure-Pursuit-Querregelung und proportionale Geschwindigkeitsregelung mit IMU- und Encoder-Rückführung umgesetzt. Den Lenkmechanismus iterativ weiterentwickelt, um die Simulation mit einer funktionsfähigen Ackermann-Plattform zu verbinden.",
+      "action": "Details ansehen",
+      "stack": [
+        "ROS",
+        "Gazebo",
+        "Raspberry Pi",
+        "IMU",
+        "Pure Pursuit"
+      ]
+    },
+    "abs": {
+      "title": "Lineare MPC für das ABS eines Elektrofahrzeugs",
+      "summary": "Beschränkte modellprädiktive Regelung des Radschlupfs beim Bremsen eines Elektrofahrzeugs.",
+      "detail": "Bachelorarbeit zu longitudinaler Fahrzeug- und Raddynamik, Reifenschlupf, Reglerbeschränkungen und Bremsverhalten bei wechselnden Straßenbedingungen.",
+      "action": "Details ansehen",
+      "stack": [
+        "MATLAB",
+        "Simulink",
+        "MPC",
+        "Fahrdynamik"
+      ]
+    },
+    "manipulator": {
+      "title": "Koordiniertes Pick-and-Place-System mit zwei Manipulatoren",
+      "summary": "Zwei koordinierte Manipulatoren, ein Förderband und kamerabasierte Objektverfolgung.",
+      "detail": "Eine koordinierte Roboterzelle mit zwei Armen und Förderband entwickelt. Kameratracking und ArUco-Marker ermöglichten die Identifikation und Lokalisierung der Objekte.",
+      "action": "Details ansehen",
+      "stack": [
+        "Robotik",
+        "ArUco",
+        "Computer Vision",
+        "Trajektorienplanung"
+      ]
+    },
+    "tensegrity": {
+      "title": "Rollender Tensegrity-Roboter",
+      "summary": "Seilzugaktuierte Fortbewegung durch kontrollierte Verformung einer Tensegrity-Struktur.",
+      "detail": "Bei ARAtronics untersucht, wie Seilzugaktuierung und Strukturverformung die Rollbewegung einer leichten, nachgiebigen Roboterstruktur erzeugen.",
+      "action": "Details ansehen",
+      "stack": [
+        "Tensegrity",
+        "Mechanische Konstruktion",
+        "Regelungstechnik",
+        "Prototyping"
+      ]
+    },
+    "irrigation": {
+      "title": "Autonome Center-Pivot-Bewässerung",
+      "summary": "Verteilte Sensorik und feuchteabhängige Regelung für Präzisionsbewässerung.",
+      "detail": "Vier Mikrocontroller, Bodenfeuchtesensorik, PWM-Ansteuerung, Fernüberwachung und ein ML-basiertes Sicherheitsmodell in einem autonomen Bewässerungsprototyp integriert.",
+      "action": "Details ansehen",
+      "stack": [
+        "Mikrocontroller",
+        "PWM",
+        "Sensorik",
+        "Remote-UI",
+        "ML-Sicherheitsmodell"
+      ]
+    },
+    "connectFour": {
+      "title": "Vier gewinnt: KI-Agent",
+      "summary": "Ein Spielagent auf Basis von Suche, Zustandsbewertung und adversarieller Entscheidungslogik.",
+      "detail": "Einen KI-Gegner für Vier gewinnt entwickelt, der Spielsituationen mittels adversarieller Suche und Brettbewertung in taktische Entscheidungen überführt.",
+      "action": "Details ansehen",
+      "stack": [
+        "Python",
+        "Algorithmen",
+        "Spiele-KI",
+        "Suche"
+      ]
+    }
+  },
+  "experience": {
+    "robco": {
+      "period": "2026",
+      "organization": "RobCo · Autonomy Team",
+      "role": "Werkstudent als Mechatronikingenieur",
+      "detail": "Robotik-Prototyping · CAD · Additive Fertigung · Systemintegration"
+    },
+    "tum": {
+      "period": "2025 bis heute",
+      "organization": "Technische Universität München",
+      "role": "Parallele Masterstudiengänge",
+      "detail": "Mechatronik, Robotik und Biomechanik · Künstliche Intelligenz in der Gesellschaft"
+    },
+    "gasco": {
+      "period": "2024 bis 2025",
+      "organization": "GASCO",
+      "role": "SCADA- und Automatisierungsingenieur",
+      "detail": "Industrielles Monitoring · Betriebsdaten · Predictive Maintenance · Zuverlässigkeit"
+    },
+    "guc": {
+      "period": "2023",
+      "organization": "GUC × GIU Berlin",
+      "role": "Doppelabschluss B.Sc. Mechatronik · Note 1,9",
+      "detail": "Abschlussarbeit: Lineare MPC für das Antiblockiersystem eines Elektrofahrzeugs"
+    }
+  },
+  "about": {
+    "eyebrow": "ARBEITSPRINZIP",
+    "title": "Die Ebenen verbinden.",
+    "paragraphOne": "Ich arbeite an der Schnittstelle von Autonomie-Software und physischen Maschinen: Sensorik, Regelungstechnik, Embedded-Implementierung, mechanische Integration und Tests.",
+    "paragraphTwo": "Mein industrieller Hintergrund prägt meinen Fokus auf Zuverlässigkeit. Ich entwickle Systeme, die mit verrauschten Sensoren, unvollkommener Hardware und realen Betriebsbedingungen funktionieren, nicht nur in idealisierten Simulationen.",
+    "principles": [
+      "01 / MODELLIEREN",
+      "02 / BAUEN",
+      "03 / TESTEN",
+      "04 / ITERIEREN"
+    ]
+  },
+  "footer": {
+    "eyebrow": "LASSEN SIE UNS ETWAS GREIFBARES ENTWICKELN",
+    "title": "Offen für Positionen in Robotik, Autonomie und Physical AI.",
+    "email": "E-Mail",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 Ahmed Othman · München, Deutschland"
+  },
+  "modal": {
+    "close": "Projektdetails schließen",
+    "evidenceStatus": "PROJEKTNACHWEISE",
+    "evidencePending": "Technische Medien und Repository-Links werden nach Sichtung des Ausgangsmaterials ergänzt.",
+    "evidenceAvailable": "Quellcode, Architektur, Einrichtung und Demo-Dokumentation sind im öffentlichen Repository verfügbar.",
+    "viewRepository": "Repository ansehen",
+    "viewDetails": "Details ansehen"
+  },
+  "accessibility": {
+    "skipToContent": "Zum Hauptinhalt springen",
+    "settingsLabel": "Anzeige und Barrierefreiheit",
+    "openSettings": "Einstellungen für Anzeige und Barrierefreiheit öffnen",
+    "closeSettings": "Einstellungen für Anzeige und Barrierefreiheit schließen",
+    "languageLabel": "Sprache",
+    "selectLanguage": "Sprache auswählen",
+    "currentLanguage": "Aktuelle Sprache: {language}",
+    "languages": {
+      "en": "English",
+      "de": "Deutsch",
+      "ar": "العربية"
+    },
+    "appearanceLabel": "Darstellung",
+    "selectAppearance": "Darstellung auswählen",
+    "themes": {
+      "system": "Systemeinstellung",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "highContrast": "Hoher Kontrast"
+    },
+    "largeText": "Größere Schrift",
+    "largeTextDescription": "Erhöht die Textgröße für bessere Lesbarkeit.",
+    "reducedMotion": "Bewegungen reduzieren",
+    "reducedMotionDescription": "Reduziert Animationen und Übergangseffekte.",
+    "reset": "Einstellungen zurücksetzen",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+    "externalLink": "Öffnet in einem neuen Tab",
+    "filterUpdated": "Projektfilter aktualisiert.",
+    "projectCountOne": "1 Projekt wird angezeigt.",
+    "projectCountMany": "{count} Projekte werden angezeigt.",
+    "dialogOpened": "Projektdetails zu {title} geöffnet.",
+    "dialogClosed": "Projektdetails geschlossen."
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "title": "Ahmed Othman | Robotics & Physical AI Engineer",
+    "description": "Ahmed Othman's portfolio in robotics, autonomy, control and embedded systems.",
+    "siteName": "Ahmed Othman Engineering Portfolio"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "homeLabel": "Ahmed Othman home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Available for working-student and research roles",
+    "eyebrow": "MECHATRONICS / AUTONOMY / MUNICH",
+    "firstName": "Ahmed",
+    "lastName": "Othman",
+    "title": "Robotics & Physical AI Engineer",
+    "lede": "I build intelligent machines where learned autonomy meets deterministic hardware.",
+    "primaryAction": "Explore projects",
+    "secondaryAction": "About",
+    "coreStackLabel": "CORE STACK",
+    "coreStack": "ROS2 · Python · C++ · MATLAB/Simulink · Control · Embedded Systems",
+    "diagramLabel": "Abstract robotic system diagram",
+    "telemetryJoint": "J1 +034.2°",
+    "telemetryControl": "CTRL 500 Hz",
+    "telemetryState": "STATE / NOMINAL"
+  },
+  "filters": {
+    "label": "Filter projects",
+    "all": "All",
+    "robotics": "Robotics",
+    "control": "Control",
+    "ai": "AI",
+    "embedded": "Embedded"
+  },
+  "sections": {
+    "projects": {
+      "eyebrow": "SELECTED WORK / 2020 TO 2026",
+      "title": "Selected engineering projects",
+      "intro": "Systems built across simulation, control, electronics and physical prototyping."
+    },
+    "experience": {
+      "eyebrow": "FIELD NOTES",
+      "title": "From industrial systems to autonomy"
+    }
+  },
+  "projects": {
+    "atlas": {
+      "title": "Sofia Atlas Travel",
+      "summary": "An autonomous multilingual travel sales agent with qualification, outcome routing and an operator dashboard.",
+      "detail": "Built for the TUM.ai Makeathon HappyRobot challenge. Sofia qualifies inbound callers across four languages, extracts 14 structured lead fields, routes outcomes, schedules callbacks and connects qualification events to a secure Mission Control dashboard.",
+      "action": "View repository",
+      "stack": ["HappyRobot", "Next.js", "AI Agents", "Webhooks"]
+    },
+    "ackermann": {
+      "title": "Autonomous Ackermann Vehicle",
+      "summary": "A ROS-based autonomous vehicle combining localization, path tracking and embedded actuation.",
+      "detail": "Implemented pure-pursuit lateral control and proportional velocity control using IMU and encoder feedback. Iterated the steering mechanism to connect simulation with a working Ackermann platform.",
+      "action": "View details",
+      "stack": ["ROS", "Gazebo", "Raspberry Pi", "IMU", "Pure Pursuit"]
+    },
+    "abs": {
+      "title": "Linear MPC for EV Anti-lock Braking",
+      "summary": "Constrained predictive control for wheel-slip regulation during electric-vehicle braking.",
+      "detail": "Bachelor thesis covering longitudinal vehicle and wheel dynamics, tyre-slip behaviour, controller constraints and braking performance under changing road conditions.",
+      "action": "View details",
+      "stack": ["MATLAB", "Simulink", "MPC", "Vehicle Dynamics"]
+    },
+    "manipulator": {
+      "title": "Multi-Manipulator Pick & Place",
+      "summary": "Two coordinated manipulators, a conveyor and vision-based object tracking.",
+      "detail": "Built a coordinated workcell with two arms and a conveyor. Camera tracking and ArUco markers provided object identification and localization.",
+      "action": "View details",
+      "stack": ["Robotics", "ArUco", "Computer Vision", "Trajectory Planning"]
+    },
+    "tensegrity": {
+      "title": "Tensegrity Rolling Robot",
+      "summary": "Cable-actuated locomotion through controlled deformation of a tensegrity structure.",
+      "detail": "Explored how cable actuation and structural deformation generate rolling locomotion in a lightweight compliant robotic structure at ARAtronics.",
+      "action": "View details",
+      "stack": ["Tensegrity", "Mechanical Design", "Control", "Prototyping"]
+    },
+    "irrigation": {
+      "title": "Autonomous Center-Pivot Irrigation",
+      "summary": "Distributed sensing and moisture-driven control for precision irrigation.",
+      "detail": "Integrated four microcontrollers, soil-moisture sensing, PWM actuation, remote monitoring and a safety model into an autonomous irrigation prototype.",
+      "action": "View details",
+      "stack": ["Microcontrollers", "PWM", "Sensors", "Remote UI", "Safety ML"]
+    },
+    "connectFour": {
+      "title": "Connect Four AI Agent",
+      "summary": "A game-playing agent designed around search, evaluation and adversarial decision-making.",
+      "detail": "Developed an AI opponent for Connect Four, translating game state into tactical decisions through adversarial search and board evaluation.",
+      "action": "View details",
+      "stack": ["Python", "Algorithms", "Game AI", "Search"]
+    }
+  },
+  "experience": {
+    "robco": {
+      "period": "2026",
+      "organization": "RobCo · Autonomy Team",
+      "role": "Mechatronics Engineer, Working Student",
+      "detail": "Robotic prototyping · CAD · additive manufacturing · system integration"
+    },
+    "tum": {
+      "period": "2025 to present",
+      "organization": "Technical University of Munich",
+      "role": "Parallel master's studies",
+      "detail": "Mechatronics, Robotics & Biomechanical Engineering · Artificial Intelligence in Society"
+    },
+    "gasco": {
+      "period": "2024 to 2025",
+      "organization": "GASCO",
+      "role": "SCADA / Automation Engineer",
+      "detail": "Industrial monitoring · operational data · predictive maintenance · reliability"
+    },
+    "guc": {
+      "period": "2023",
+      "organization": "GUC × GIU Berlin",
+      "role": "Dual B.Sc. Mechatronics Engineering · Grade 1.9",
+      "detail": "Thesis: Linear MPC for an electric-vehicle anti-lock braking system"
+    }
+  },
+  "about": {
+    "eyebrow": "OPERATING PRINCIPLE",
+    "title": "Bridge the layers.",
+    "paragraphOne": "I work at the boundary between autonomy software and physical machines: sensing, control, embedded execution, mechanical integration and testing.",
+    "paragraphTwo": "My industrial background adds a reliability-first perspective. I care about systems that survive noisy sensors, imperfect hardware and real operating constraints, not just clean simulations.",
+    "principles": ["01 / MODEL", "02 / BUILD", "03 / TEST", "04 / ITERATE"]
+  },
+  "footer": {
+    "eyebrow": "LET'S BUILD SOMETHING PHYSICAL",
+    "title": "Open to robotics, autonomy and Physical AI opportunities.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 Ahmed Othman · Munich, Germany"
+  },
+  "modal": {
+    "close": "Close project details",
+    "evidenceStatus": "PROJECT EVIDENCE",
+    "evidencePending": "Technical media and repository links will be added after source-material review.",
+    "evidenceAvailable": "Source code, architecture, setup and demo documentation are available in the public repository.",
+    "viewRepository": "View repository",
+    "viewDetails": "View details"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "settingsLabel": "Display and accessibility",
+    "openSettings": "Open display and accessibility settings",
+    "closeSettings": "Close display and accessibility settings",
+    "languageLabel": "Language",
+    "selectLanguage": "Select language",
+    "currentLanguage": "Current language: {language}",
+    "languages": {"en": "English", "de": "Deutsch", "ar": "العربية"},
+    "appearanceLabel": "Appearance",
+    "selectAppearance": "Select appearance",
+    "themes": {"system": "System", "light": "Light", "dark": "Dark", "highContrast": "High contrast"},
+    "largeText": "Larger text",
+    "largeTextDescription": "Increase text size for easier reading.",
+    "reducedMotion": "Reduce motion",
+    "reducedMotionDescription": "Reduce animations and transitions.",
+    "reset": "Reset preferences",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "externalLink": "Opens in a new tab",
+    "filterUpdated": "Project filter updated.",
+    "projectCountOne": "1 project is shown.",
+    "projectCountMany": "{count} projects are shown.",
+    "dialogOpened": "Project details opened for {title}.",
+    "dialogClosed": "Project details closed."
+  }
+}

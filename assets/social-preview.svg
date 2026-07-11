@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Ahmed Othman, Robotics and Physical AI Engineer</title>
+  <desc id="description">Portfolio social card with an AO monogram and an abstract robotics linkage.</desc>
+  <rect width="1200" height="630" fill="#f7f9fc"/>
+  <rect width="1200" height="20" fill="#1f54e7"/>
+  <g opacity=".48" stroke="#8fa0bd" fill="none">
+    <circle cx="1000" cy="315" r="182" stroke-width="2"/>
+    <circle cx="1000" cy="315" r="121" stroke-width="2" stroke-dasharray="9 11"/>
+  </g>
+  <path d="M850 430 932 344l82-140 110 61" fill="none" stroke="#1f54e7" stroke-width="22" stroke-linecap="square" stroke-linejoin="round"/>
+  <circle cx="932" cy="344" r="39" fill="#1f54e7"/>
+  <circle cx="1014" cy="204" r="39" fill="#ff692e"/>
+  <circle cx="1124" cy="265" r="14" fill="#10141c"/>
+
+  <rect x="80" y="82" width="92" height="92" rx="20" fill="#10141c"/>
+  <g transform="translate(80 82) scale(1.4375)">
+    <path d="M9 45 24 14h7l15 31h-9l-3-7H20l-3 7Zm14-14h8l-4-9Z" fill="#f7f9fc"/>
+    <circle cx="44" cy="31" r="11" fill="none" stroke="#4d7cff" stroke-width="6"/>
+    <circle cx="44" cy="31" r="3" fill="#ff6b2b"/>
+  </g>
+
+  <text x="80" y="296" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" letter-spacing="-2" fill="#10141c">Ahmed Othman</text>
+  <text x="80" y="366" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#1f54e7">Robotics &amp; Physical AI Engineer</text>
+  <text x="80" y="430" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#4b5565">Autonomy software  |  Embedded systems  |  Physical machines</text>
+  <text x="80" y="535" font-family="monospace" font-size="21" letter-spacing="2" fill="#667080">MUNICH  /  ROS2  /  CONTROL  /  EMBEDDED AI</text>
+</svg>

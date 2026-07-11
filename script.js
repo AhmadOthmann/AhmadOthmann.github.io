@@ -1,16 +1,166 @@
 "use strict";
 
-const projects = [
-  {title:"Sofia Atlas Travel",category:"AI",code:"AI-07",summary:"An autonomous multilingual travel sales agent with qualification, outcome routing and an operator dashboard.",stack:["HappyRobot","Next.js","AI Agents","Webhooks"],detail:"Built for the TUM.ai Makeathon HappyRobot challenge. Sofia qualifies inbound callers across four languages, extracts 14 structured lead fields, routes outcomes, schedules callbacks and connects qualification events to a secure Mission Control dashboard.",repo:"https://github.com/AhmadOthmann/Sofia-Atlas-Travel",image:"assets/project-logos/sofia-atlas-compass.webp",action:"View repository"},
-  {title:"Autonomous Ackermann Vehicle",category:"Robotics",code:"ROB-01",summary:"A ROS-based autonomous vehicle combining localization, path tracking and embedded actuation.",stack:["ROS","Gazebo","Raspberry Pi","IMU","Pure Pursuit"],detail:"Implemented pure-pursuit lateral control and proportional velocity control using IMU and encoder feedback. Iterated the steering mechanism to connect simulation with a working Ackermann platform.",image:"assets/project-logos/ackermann-vehicle.webp"},
-  {title:"Linear MPC for EV Anti-lock Braking",category:"Control",code:"CTL-02",summary:"Constrained predictive control for wheel-slip regulation during electric-vehicle braking.",stack:["MATLAB","Simulink","MPC","Vehicle Dynamics"],detail:"Bachelor thesis covering longitudinal vehicle and wheel dynamics, tyre-slip behaviour, controller constraints and braking performance under changing road conditions.",image:"assets/project-logos/ev-abs-mpc.webp"},
-  {title:"Multi-Manipulator Pick & Place",category:"Robotics",code:"ROB-03",summary:"Two coordinated manipulators, a conveyor and vision-based object tracking.",stack:["Robotics","ArUco","Computer Vision","Trajectory Planning"],detail:"Built a coordinated workcell with two arms and a conveyor. Camera tracking and ArUco markers provided object identification and localization.",image:"assets/project-logos/multi-manipulator.webp"},
-  {title:"Tensegrity Rolling Robot",category:"Robotics",code:"ROB-04",summary:"Cable-actuated locomotion through controlled deformation of a tensegrity structure.",stack:["Tensegrity","Mechanical Design","Control","Prototyping"],detail:"Explored how cable actuation and structural deformation generate rolling locomotion in a lightweight compliant robotic structure at ARAtronics.",image:"assets/project-logos/tensegrity-robot.webp"},
-  {title:"Autonomous Center-Pivot Irrigation",category:"Embedded",code:"EMB-05",summary:"Distributed sensing and moisture-driven control for precision irrigation.",stack:["Microcontrollers","PWM","Sensors","Remote UI","Safety ML"],detail:"Integrated four microcontrollers, soil-moisture sensing, PWM actuation, remote monitoring and a safety model into an autonomous irrigation prototype.",image:"assets/project-logos/autonomous-irrigation.webp"},
-  {title:"Connect Four AI Agent",category:"AI",code:"AI-06",summary:"A game-playing agent designed around search, evaluation and adversarial decision-making.",stack:["Python","Algorithms","Game AI","Search"],detail:"Developed an AI opponent for Connect Four, translating game state into tactical decisions through adversarial search and board evaluation.",image:"assets/project-logos/connect-four-ai.webp"}
-];
-const grid=document.querySelector("#project-grid"), dialog=document.querySelector("#case-dialog");
-function render(filter="All"){grid.replaceChildren(...projects.filter(p=>filter==="All"||p.category===filter).map(p=>{const article=document.createElement("article");article.className="project-card";const visual=p.image?`<div class="project-visual has-image"><img src="${p.image}" alt="" loading="lazy"></div>`:`<div class="project-visual" aria-hidden="true"><span>${p.code}</span><b>${p.category}</b></div>`;article.innerHTML=`${visual}<div class="card-meta"><span>${p.code}</span><span>${p.category}</span></div><h3>${p.title}</h3><p>${p.summary}</p><div class="tags">${p.stack.slice(0,3).map(t=>`<span>${t}</span>`).join("")}</div><button class="case-link">${p.action||"View details"} <span>↗</span></button>`;article.querySelector("button").addEventListener("click",()=>openCase(p));return article;}));}
-function openCase(p){document.querySelector("#dialog-code").textContent=`${p.code} / ${p.category}`;document.querySelector("#dialog-title").textContent=p.title;document.querySelector("#dialog-detail").textContent=p.detail;document.querySelector("#dialog-tags").replaceChildren(...p.stack.map(t=>{const s=document.createElement("span");s.textContent=t;return s;}));const repoLink=document.querySelector("#dialog-repo"),evidenceCopy=document.querySelector("#dialog-evidence-copy");if(p.repo){repoLink.href=p.repo;repoLink.hidden=false;evidenceCopy.textContent="Source code, architecture, setup and demo documentation are available in the public repository.";}else{repoLink.removeAttribute("href");repoLink.hidden=true;evidenceCopy.textContent="Technical media and repository links will be added after source-material review.";}dialog.showModal();}
-document.querySelectorAll("[data-filter]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b===button));render(button.dataset.filter);}));
-dialog.querySelector(".close").addEventListener("click",()=>dialog.close());dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});render();
+(() => {
+  const root = document.documentElement;
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const allowedThemes = new Set(["system", "light", "dark", "contrast"]);
+
+  function readPreference(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function writePreference(key, value, defaultValue) {
+    try {
+      if (value === defaultValue) {
+        localStorage.removeItem(key);
+      } else {
+        localStorage.setItem(key, value);
+      }
+    } catch {
+      // The selected preference still applies for the current page view.
+    }
+  }
+
+  function resolvedTheme(theme) {
+    if (theme === "system") {
+      return systemDark.matches ? "dark" : "light";
+    }
+    return theme;
+  }
+
+  function updateThemeColor() {
+    if (!themeColor) return;
+    const theme = resolvedTheme(root.dataset.theme || "system");
+    const colors = {
+      light: "#f3f0e8",
+      dark: "#0c121b",
+      contrast: "#000000"
+    };
+    themeColor.content = colors[theme] || colors.light;
+  }
+
+  const themeSelect = document.querySelector("#theme-select");
+  if (themeSelect) {
+    const initialTheme = allowedThemes.has(root.dataset.theme) ? root.dataset.theme : "system";
+    themeSelect.value = initialTheme;
+    themeSelect.addEventListener("change", () => {
+      const theme = allowedThemes.has(themeSelect.value) ? themeSelect.value : "system";
+      root.dataset.theme = theme;
+      writePreference("portfolio-theme", theme, "system");
+      updateThemeColor();
+    });
+  }
+
+  const textSizeToggle = document.querySelector("#text-size-toggle");
+  const motionToggle = document.querySelector("#motion-toggle");
+
+  function updateToggle(button, enabled) {
+    if (!button) return;
+    button.setAttribute("aria-pressed", String(enabled));
+    const state = button.querySelector(".toggle-state");
+    if (state) {
+      state.textContent = enabled ? state.dataset.enabled : state.dataset.disabled;
+    }
+  }
+
+  function setTextSize(large, persist = true) {
+    root.dataset.textSize = large ? "large" : "normal";
+    updateToggle(textSizeToggle, large);
+    if (persist) writePreference("portfolio-text-size", large ? "large" : "normal", "normal");
+  }
+
+  function setMotion(reduce, persist = true) {
+    root.dataset.motion = reduce ? "reduce" : "auto";
+    updateToggle(motionToggle, reduce);
+    if (persist) writePreference("portfolio-motion", reduce ? "reduce" : "auto", "auto");
+  }
+
+  setTextSize(root.dataset.textSize === "large", false);
+  setMotion(root.dataset.motion === "reduce", false);
+
+  textSizeToggle?.addEventListener("click", () => {
+    setTextSize(root.dataset.textSize !== "large");
+  });
+
+  motionToggle?.addEventListener("click", () => {
+    setMotion(root.dataset.motion !== "reduce");
+  });
+
+  document.querySelector("#reset-preferences")?.addEventListener("click", () => {
+    root.dataset.theme = "system";
+    if (themeSelect) themeSelect.value = "system";
+    writePreference("portfolio-theme", "system", "system");
+    setTextSize(false);
+    setMotion(false);
+    updateThemeColor();
+  });
+
+  systemDark.addEventListener("change", updateThemeColor);
+  updateThemeColor();
+
+  const projectCards = [...document.querySelectorAll(".project-card")];
+  const filterButtons = [...document.querySelectorAll("[data-filter]")];
+  const filterStatus = document.querySelector("#filter-status");
+
+  function announceProjectCount(count) {
+    if (!filterStatus) return;
+    const template = count === 1 ? filterStatus.dataset.countOne : filterStatus.dataset.countMany;
+    filterStatus.textContent = (template || "{count}").replace("{count}", String(count));
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter || "all";
+      let visibleCount = 0;
+
+      filterButtons.forEach((candidate) => {
+        candidate.setAttribute("aria-pressed", String(candidate === button));
+      });
+
+      projectCards.forEach((card) => {
+        const visible = filter === "all" || card.dataset.category === filter;
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+
+      announceProjectCount(visibleCount);
+    });
+  });
+
+  const toolMenus = [...document.querySelectorAll(".tool-menu")];
+
+  toolMenus.forEach((menu) => {
+    menu.addEventListener("toggle", () => {
+      if (!menu.open) return;
+      toolMenus.forEach((otherMenu) => {
+        if (otherMenu !== menu) otherMenu.open = false;
+      });
+    });
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    toolMenus.forEach((menu) => {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const openMenu = toolMenus.find((menu) => menu.open);
+    if (!openMenu) return;
+    openMenu.open = false;
+    openMenu.querySelector("summary")?.focus();
+  });
+
+  const storedTheme = readPreference("portfolio-theme");
+  if (themeSelect && allowedThemes.has(storedTheme) && storedTheme !== root.dataset.theme) {
+    root.dataset.theme = storedTheme;
+    themeSelect.value = storedTheme;
+    updateThemeColor();
+  }
+})();
