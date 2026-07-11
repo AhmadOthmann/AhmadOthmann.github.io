@@ -32,6 +32,7 @@ Every push to `main` updates the GitHub Pages website. No compilation, package i
 
 | Project | Focus | Technologies |
 |---|---|---|
+| [Sofia Atlas Travel](https://github.com/AhmadOthmann/Sofia-Atlas-Travel) | Autonomous multilingual sales qualification and workflow observability | HappyRobot, Next.js, AI agents, webhooks |
 | Autonomous Ackermann Vehicle | Localization, path tracking and embedded actuation | ROS, Gazebo, Raspberry Pi, IMU |
 | EV Anti-lock Braking | Linear model predictive control for wheel-slip regulation | MATLAB/Simulink, MPC |
 | Multi-Manipulator Pick & Place | Coordinated manipulation and visual localization | Robotics, ArUco, computer vision |
