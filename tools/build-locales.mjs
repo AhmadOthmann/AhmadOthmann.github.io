@@ -235,10 +235,10 @@ ${alternateLocales.map((ogLocale) => `  <meta property="og:locale:alternate" con
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <script src="/theme-init.js"></script>
-  <link rel="stylesheet" href="/styles.css">
+  <script src="/theme-init.js?v=${assetVersions["theme-init.js"]}"></script>
+  <link rel="stylesheet" href="/styles.css?v=${assetVersions["styles.css"]}">
   <script type="application/ld+json">${jsonLd}</script>
-  <script src="/script.js" defer></script>
+  <script src="/script.js?v=${assetVersions["script.js"]}" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">${escapeHtml(t.accessibility.skipToContent)}</a>
@@ -332,6 +332,12 @@ ${career}
 </html>
 `;
 }
+
+const cacheableAssets = ["theme-init.js", "styles.css", "script.js"];
+const assetVersions = Object.fromEntries(await Promise.all(cacheableAssets.map(async (asset) => {
+  const source = await readFile(join(root, asset));
+  return [asset, createHash("sha256").update(source).digest("hex").slice(0, 12)];
+})));
 
 const translations = Object.fromEntries(await Promise.all(languageOrder.map(async (locale) => {
   const source = await readFile(join(root, "i18n", `${locale}.json`), "utf8");
