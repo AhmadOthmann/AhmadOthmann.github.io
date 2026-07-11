@@ -54,24 +54,25 @@
     </nav>
     <div class="header-tools" role="group" aria-label="Display and accessibility">
       <details class="tool-menu language-menu">
-          <summary aria-label="Current language: English">
-            <span aria-hidden="true">EN</span>
+          <summary id="language-summary" aria-controls="language-options" aria-label="Current language: English">
+            <span class="tool-badge" aria-hidden="true">EN</span>
             <span class="summary-label">Language</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
-          <ul>
-              <li><a href="/" hreflang="en" lang="en" dir="ltr" aria-current="page"><span>English</span><span aria-hidden="true">EN</span></a></li>
-              <li><a href="/de/" hreflang="de" lang="de" dir="ltr"><span>Deutsch</span><span aria-hidden="true">DE</span></a></li>
-              <li><a href="/ar/" hreflang="ar" lang="ar" dir="rtl"><span>العربية</span><span aria-hidden="true">AR</span></a></li>
+          <ul id="language-options">
+              <li><a href="/" hreflang="en" data-language-link aria-current="page"><span class="language-name" lang="en" dir="ltr">English</span><span class="language-code" aria-hidden="true">EN</span><span class="language-check" aria-hidden="true">✓</span></a></li>
+              <li><a href="/de/" hreflang="de" data-language-link><span class="language-name" lang="de" dir="ltr">Deutsch</span><span class="language-code" aria-hidden="true">DE</span><span class="language-check" aria-hidden="true"></span></a></li>
+              <li><a href="/ar/" hreflang="ar" data-language-link><span class="language-name" lang="ar" dir="rtl">العربية</span><span class="language-code" aria-hidden="true">AR</span><span class="language-check" aria-hidden="true"></span></a></li>
           </ul>
         </details>
       <details class="tool-menu appearance-menu">
-          <summary>
-            <span class="display-icon" aria-hidden="true">◐</span>
+          <summary id="appearance-summary" aria-controls="appearance-options">
+            <span class="display-icon tool-badge" aria-hidden="true">◐</span>
             <span class="summary-label">Appearance</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
-          <div class="appearance-panel">
+          <div class="appearance-panel" id="appearance-options" role="group" aria-labelledby="appearance-summary">
+            <p class="panel-title">Display and accessibility</p>
             <label class="select-setting">
               <span>Appearance</span>
               <select id="theme-select" aria-label="Select appearance">
@@ -252,41 +253,144 @@
       </div>
     </section>
 
-    <section class="section experience" id="experience">
-      <div class="section-head"><div><p class="eyebrow">FIELD NOTES</p><h2>From industrial systems to autonomy</h2></div></div>
-      <div class="timeline">
-        <article>
-          <span class="period">2026</span>
-          <div>
-            <h3>RobCo · Autonomy Team</h3>
-            <p>Mechatronics Engineer, Working Student</p>
-            <span>Robotic prototyping · CAD · additive manufacturing · system integration</span>
-          </div>
-        </article>
-        <article>
-          <span class="period">2025 to present</span>
-          <div>
-            <h3>Technical University of Munich</h3>
-            <p>Parallel master&#39;s studies</p>
-            <span>Mechatronics, Robotics &amp; Biomechanical Engineering · Artificial Intelligence in Society</span>
-          </div>
-        </article>
-        <article>
-          <span class="period">2024 to 2025</span>
-          <div>
-            <h3>GASCO</h3>
-            <p>SCADA / Automation Engineer</p>
-            <span>Industrial monitoring · operational data · predictive maintenance · reliability</span>
-          </div>
-        </article>
-        <article>
-          <span class="period">2023</span>
-          <div>
-            <h3>GUC × GIU Berlin</h3>
-            <p>Dual B.Sc. Mechatronics Engineering · Grade 1.9</p>
-            <span>Thesis: Linear MPC for an electric-vehicle anti-lock braking system</span>
-          </div>
-        </article>
+    <section class="section career" id="experience">
+      <div class="section-head">
+        <div><p class="eyebrow">RESUME / 2021 TO PRESENT</p><h2>Experience, research and education</h2></div>
+        <p>A resume-based view of the roles, research teams and degree programs shaping my work in robotics and Physical AI.</p>
+      </div>
+      <div class="career-groups">
+      <section class="career-group" aria-labelledby="career-professional-heading">
+        <div class="career-group-heading">
+          <span aria-hidden="true">01</span>
+          <h3 id="career-professional-heading">Professional experience</h3>
+        </div>
+        <div class="career-list">
+          <article class="career-card is-current">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Apr 2026 to Present</span>
+              <span class="career-location" dir="auto">Munich, Germany</span>
+              <span class="current-badge">Current</span>
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">RobCo</h4>
+              <p class="career-role" dir="auto">Robotics Mechatronics Engineer</p>
+              <p class="career-detail" dir="auto">Building Autonomous Alfie, implementing Pi0 VLA models and the teleoperation data pipeline for fine-tuning, and integrating learned policies with real-time mechatronic control on production hardware.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Jan 2025 to Mar 2026</span>
+              <span class="career-location" dir="auto">Hybrid</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Egyptian Natural Gas Company (GASCO)</h4>
+              <p class="career-role" dir="auto">AI &amp; Control Systems Engineer</p>
+              <p class="career-detail" dir="auto">Delivered gas-flow forecasting and anomaly-detection pipelines using XGBoost, Prophet, LSTMs and Airflow, then surfaced predictive-maintenance signals from high-frequency telemetry.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Apr 2023 to Dec 2024</span>
+              <span class="career-location" dir="auto">Remote</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Huawei</h4>
+              <p class="career-role" dir="auto">Machine Learning Engineer</p>
+              <p class="career-detail" dir="auto">Trained and deployed ResNet, EfficientNet and YOLOv8 models for industrial visual quality control, optimized edge inference with TensorRT and shipped FastAPI services in Docker.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Oct 2022 to Mar 2023</span>
+              <span class="career-location" dir="auto">Berlin, Germany</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">ARAtronics Lab, GIU</h4>
+              <p class="career-role" dir="auto">Robotics Project Lead</p>
+              <p class="career-detail" dir="auto">Led end-to-end integration of an autonomous irrigation robot, including I2C and CAN data flow, TinyML safety perception and modular C++ firmware for ESP32 and STM32 sensor stacks.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Jun 2022 to Oct 2022</span>
+              <span class="career-location" dir="auto">Cairo, Egypt</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Multi-Robot Systems Lab, GUC</h4>
+              <p class="career-role" dir="auto">Autonomous Systems Engineer</p>
+              <p class="career-detail" dir="auto">Configured ROS navigation for Ackermann vehicles with LiDAR SLAM and EKF localization, then tuned PID and Pure Pursuit controllers in Gazebo.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Oct 2021 to Jun 2022</span>
+              <span class="career-location" dir="auto">Cairo, Egypt</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Egyrobo for Robotic Systems</h4>
+              <p class="career-role" dir="auto">Robotics Engineer</p>
+              <p class="career-detail" dir="auto">Performed D-H and inverse-kinematics analysis for 6-DOF welding manipulators in MATLAB/Simulink and developed closed-loop positioning control.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="career-group" aria-labelledby="career-research-heading">
+        <div class="career-group-heading">
+          <span aria-hidden="true">02</span>
+          <h3 id="career-research-heading">Research and university</h3>
+        </div>
+        <div class="career-list">
+          <article class="career-card is-current">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Apr 2025 to Present</span>
+              <span class="career-location" dir="auto">Munich, Germany</span>
+              <span class="current-badge">Current</span>
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">RoboTUM, Forrest Humanoid</h4>
+              <p class="career-role" dir="auto">Real-Time Cluster, Embedded to Software</p>
+              <p class="career-detail" dir="auto">Contributing to the tendon-driven Forrest biped and building the deterministic control bridge between embedded firmware and the software stack.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="career-group" aria-labelledby="career-education-heading">
+        <div class="career-group-heading">
+          <span aria-hidden="true">03</span>
+          <h3 id="career-education-heading">Education</h3>
+        </div>
+        <div class="career-list">
+          <article class="career-card is-current">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Oct 2025 to Apr 2027</span>
+              <span class="career-location" dir="auto">Munich, Germany</span>
+              <span class="current-badge">Current</span>
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Technical University of Munich</h4>
+              <p class="career-role" dir="auto">Dual M.Sc. at TUM, parallel programs</p>
+              <p class="career-detail" dir="auto">M.Sc. Mechatronics, Robotics &amp; Biomechanical Engineering and M.Sc. AI in Society, spanning robot dynamics and control, deep learning for robotics, sensor fusion, optimization-based control, AI governance and autonomous-systems regulation.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">Sep 2018 to Aug 2021</span>
+              <span class="career-location" dir="auto">Berlin, Germany</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">German International University and German University in Cairo</h4>
+              <p class="career-role" dir="auto">Dual B.Sc. Mechatronics Engineering, final grade 1.7</p>
+              <p class="career-detail" dir="auto">Thesis: ABS for Electric Vehicles using Linear MPC. Core studies included control systems, robotics and automation, kinematics and embedded systems.</p>
+            </div>
+          </article>
+        </div>
+      </section>
       </div>
     </section>
 

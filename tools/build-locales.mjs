@@ -22,7 +22,12 @@ const projectDefinitions = [
   { key: "connectFour", category: "ai", code: "AI-06", image: "/assets/project-logos/connect-four-ai.webp" }
 ];
 
-const experienceDefinitions = ["robco", "tum", "gasco", "guc"];
+const careerGroups = [
+  { key: "professional", headingKey: "professionalHeading", entries: ["robco", "gasco", "huawei", "aratronics", "mrs", "egyrobo"] },
+  { key: "research", headingKey: "researchHeading", entries: ["robotum"] },
+  { key: "education", headingKey: "educationHeading", entries: ["tum", "bachelors"] }
+];
+const currentCareerEntries = new Set(["robco", "robotum", "tum"]);
 const languageOrder = ["en", "de", "ar"];
 const nativeLanguageNames = { en: "English", de: "Deutsch", ar: "العربية" };
 
@@ -48,16 +53,17 @@ function renderLanguageMenu(locale, translations) {
     const config = locales[language];
     const label = nativeLanguageNames[language];
     const currentAttribute = language === locale ? ' aria-current="page"' : "";
-    return `              <li><a href="${config.path}" hreflang="${language}" lang="${language}" dir="${config.dir}"${currentAttribute}><span>${escapeHtml(label)}</span><span aria-hidden="true">${config.short}</span></a></li>`;
+    const check = language === locale ? "✓" : "";
+    return `              <li><a href="${config.path}" hreflang="${language}" data-language-link${currentAttribute}><span class="language-name" lang="${language}" dir="${config.dir}">${escapeHtml(label)}</span><span class="language-code" aria-hidden="true">${config.short}</span><span class="language-check" aria-hidden="true">${check}</span></a></li>`;
   }).join("\n");
 
   return `<details class="tool-menu language-menu">
-          <summary aria-label="${escapeHtml(format(translations[locale].accessibility.currentLanguage, { language: current }))}">
-            <span aria-hidden="true">${locales[locale].short}</span>
+          <summary id="language-summary" aria-controls="language-options" aria-label="${escapeHtml(format(translations[locale].accessibility.currentLanguage, { language: current }))}">
+            <span class="tool-badge" aria-hidden="true">${locales[locale].short}</span>
             <span class="summary-label">${escapeHtml(translations[locale].accessibility.languageLabel)}</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
-          <ul>
+          <ul id="language-options">
 ${links}
           </ul>
         </details>`;
@@ -65,12 +71,13 @@ ${links}
 
 function renderAppearanceMenu(t) {
   return `<details class="tool-menu appearance-menu">
-          <summary>
-            <span class="display-icon" aria-hidden="true">◐</span>
+          <summary id="appearance-summary" aria-controls="appearance-options">
+            <span class="display-icon tool-badge" aria-hidden="true">◐</span>
             <span class="summary-label">${escapeHtml(t.accessibility.appearanceLabel)}</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
-          <div class="appearance-panel">
+          <div class="appearance-panel" id="appearance-options" role="group" aria-labelledby="appearance-summary">
+            <p class="panel-title">${escapeHtml(t.accessibility.settingsLabel)}</p>
             <label class="select-setting">
               <span>${escapeHtml(t.accessibility.appearanceLabel)}</span>
               <select id="theme-select" aria-label="${escapeHtml(t.accessibility.selectAppearance)}">
@@ -119,16 +126,37 @@ ${repository ? `              ${repository}` : ""}
         </article>`;
 }
 
-function renderExperience(key, t) {
-  const item = t.experience[key];
-  return `        <article>
-          <span class="period">${escapeHtml(item.period)}</span>
-          <div>
-            <h3>${escapeHtml(item.organization)}</h3>
-            <p>${escapeHtml(item.role)}</p>
-            <span>${escapeHtml(item.detail)}</span>
-          </div>
-        </article>`;
+function renderCareerItem(key, t) {
+  const item = t.career[key];
+  const isCurrent = currentCareerEntries.has(key);
+  const classes = ["career-card", isCurrent ? "is-current" : ""].filter(Boolean).join(" ");
+  const currentBadge = isCurrent ? `<span class="current-badge">${escapeHtml(t.sections.career.currentLabel)}</span>` : "";
+  return `          <article class="${classes}">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">${escapeHtml(item.period)}</span>
+              <span class="career-location" dir="auto">${escapeHtml(item.location)}</span>
+${currentBadge ? `              ${currentBadge}` : ""}
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">${escapeHtml(item.organization)}</h4>
+              <p class="career-role" dir="auto">${escapeHtml(item.role)}</p>
+              <p class="career-detail" dir="auto">${escapeHtml(item.detail)}</p>
+            </div>
+          </article>`;
+}
+
+function renderCareerGroup(group, index, t) {
+  const cards = group.entries.map((entry) => renderCareerItem(entry, t)).join("\n");
+  const headingId = `career-${group.key}-heading`;
+  return `      <section class="career-group" aria-labelledby="${headingId}">
+        <div class="career-group-heading">
+          <span aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
+          <h3 id="${headingId}">${escapeHtml(t.sections.career[group.headingKey])}</h3>
+        </div>
+        <div class="career-list">
+${cards}
+        </div>
+      </section>`;
 }
 
 function renderPage(locale, translations) {
@@ -165,7 +193,7 @@ function renderPage(locale, translations) {
   const jsonLdHash = createHash("sha256").update(jsonLd).digest("base64");
   const csp = `default-src 'none'; script-src 'self' 'sha256-${jsonLdHash}'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests`;
   const projectCards = projectDefinitions.map((project) => renderProject(project, t)).join("\n");
-  const experience = experienceDefinitions.map((item) => renderExperience(item, t)).join("\n");
+  const career = careerGroups.map((group, index) => renderCareerGroup(group, index, t)).join("\n");
   const principles = t.about.principles.map((principle) => `<span>${escapeHtml(principle)}</span>`).join("");
   const initialCount = format(t.accessibility.projectCountMany, { count: projectDefinitions.length });
 
@@ -274,10 +302,13 @@ ${projectCards}
       </div>
     </section>
 
-    <section class="section experience" id="experience">
-      <div class="section-head"><div><p class="eyebrow">${escapeHtml(t.sections.experience.eyebrow)}</p><h2>${escapeHtml(t.sections.experience.title)}</h2></div></div>
-      <div class="timeline">
-${experience}
+    <section class="section career" id="experience">
+      <div class="section-head">
+        <div><p class="eyebrow">${escapeHtml(t.sections.career.eyebrow)}</p><h2>${escapeHtml(t.sections.career.title)}</h2></div>
+        <p>${escapeHtml(t.sections.career.intro)}</p>
+      </div>
+      <div class="career-groups">
+${career}
       </div>
     </section>
 

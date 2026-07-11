@@ -44,6 +44,7 @@ The localized pages use appropriate `lang`, text direction, canonical and `hrefl
 - Optional larger text and reduced-motion preferences
 - Semantic page structure and accessible labels for controls and project media
 - Right-to-left layout support for Arabic
+- Resume-based career groups for professional experience, research and education
 - Project artwork with transparent backgrounds, including the Atlas Travel compass identity
 
 Appearance and accessibility preferences are saved only in the visitor's browser. They are not transmitted to the site owner.

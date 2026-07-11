@@ -42,9 +42,14 @@
       "title": "Selected engineering projects",
       "intro": "Systems built across simulation, control, electronics and physical prototyping."
     },
-    "experience": {
-      "eyebrow": "FIELD NOTES",
-      "title": "From industrial systems to autonomy"
+    "career": {
+      "eyebrow": "RESUME / 2021 TO PRESENT",
+      "title": "Experience, research and education",
+      "intro": "A resume-based view of the roles, research teams and degree programs shaping my work in robotics and Physical AI.",
+      "professionalHeading": "Professional experience",
+      "researchHeading": "Research and university",
+      "educationHeading": "Education",
+      "currentLabel": "Current"
     }
   },
   "projects": {
@@ -98,30 +103,69 @@
       "stack": ["Python", "Algorithms", "Game AI", "Search"]
     }
   },
-  "experience": {
+  "career": {
     "robco": {
-      "period": "2026",
-      "organization": "RobCo · Autonomy Team",
-      "role": "Mechatronics Engineer, Working Student",
-      "detail": "Robotic prototyping · CAD · additive manufacturing · system integration"
-    },
-    "tum": {
-      "period": "2025 to present",
-      "organization": "Technical University of Munich",
-      "role": "Parallel master's studies",
-      "detail": "Mechatronics, Robotics & Biomechanical Engineering · Artificial Intelligence in Society"
+      "period": "Apr 2026 to Present",
+      "location": "Munich, Germany",
+      "organization": "RobCo",
+      "role": "Robotics Mechatronics Engineer",
+      "detail": "Building Autonomous Alfie, implementing Pi0 VLA models and the teleoperation data pipeline for fine-tuning, and integrating learned policies with real-time mechatronic control on production hardware."
     },
     "gasco": {
-      "period": "2024 to 2025",
-      "organization": "GASCO",
-      "role": "SCADA / Automation Engineer",
-      "detail": "Industrial monitoring · operational data · predictive maintenance · reliability"
+      "period": "Jan 2025 to Mar 2026",
+      "location": "Hybrid",
+      "organization": "Egyptian Natural Gas Company (GASCO)",
+      "role": "AI & Control Systems Engineer",
+      "detail": "Delivered gas-flow forecasting and anomaly-detection pipelines using XGBoost, Prophet, LSTMs and Airflow, then surfaced predictive-maintenance signals from high-frequency telemetry."
     },
-    "guc": {
-      "period": "2023",
-      "organization": "GUC × GIU Berlin",
-      "role": "Dual B.Sc. Mechatronics Engineering · Grade 1.9",
-      "detail": "Thesis: Linear MPC for an electric-vehicle anti-lock braking system"
+    "huawei": {
+      "period": "Apr 2023 to Dec 2024",
+      "location": "Remote",
+      "organization": "Huawei",
+      "role": "Machine Learning Engineer",
+      "detail": "Trained and deployed ResNet, EfficientNet and YOLOv8 models for industrial visual quality control, optimized edge inference with TensorRT and shipped FastAPI services in Docker."
+    },
+    "aratronics": {
+      "period": "Oct 2022 to Mar 2023",
+      "location": "Berlin, Germany",
+      "organization": "ARAtronics Lab, GIU",
+      "role": "Robotics Project Lead",
+      "detail": "Led end-to-end integration of an autonomous irrigation robot, including I2C and CAN data flow, TinyML safety perception and modular C++ firmware for ESP32 and STM32 sensor stacks."
+    },
+    "mrs": {
+      "period": "Jun 2022 to Oct 2022",
+      "location": "Cairo, Egypt",
+      "organization": "Multi-Robot Systems Lab, GUC",
+      "role": "Autonomous Systems Engineer",
+      "detail": "Configured ROS navigation for Ackermann vehicles with LiDAR SLAM and EKF localization, then tuned PID and Pure Pursuit controllers in Gazebo."
+    },
+    "egyrobo": {
+      "period": "Oct 2021 to Jun 2022",
+      "location": "Cairo, Egypt",
+      "organization": "Egyrobo for Robotic Systems",
+      "role": "Robotics Engineer",
+      "detail": "Performed D-H and inverse-kinematics analysis for 6-DOF welding manipulators in MATLAB/Simulink and developed closed-loop positioning control."
+    },
+    "robotum": {
+      "period": "Apr 2025 to Present",
+      "location": "Munich, Germany",
+      "organization": "RoboTUM, Forrest Humanoid",
+      "role": "Real-Time Cluster, Embedded to Software",
+      "detail": "Contributing to the tendon-driven Forrest biped and building the deterministic control bridge between embedded firmware and the software stack."
+    },
+    "tum": {
+      "period": "Oct 2025 to Apr 2027",
+      "location": "Munich, Germany",
+      "organization": "Technical University of Munich",
+      "role": "Dual M.Sc. at TUM, parallel programs",
+      "detail": "M.Sc. Mechatronics, Robotics & Biomechanical Engineering and M.Sc. AI in Society, spanning robot dynamics and control, deep learning for robotics, sensor fusion, optimization-based control, AI governance and autonomous-systems regulation."
+    },
+    "bachelors": {
+      "period": "Sep 2018 to Aug 2021",
+      "location": "Berlin, Germany",
+      "organization": "German International University and German University in Cairo",
+      "role": "Dual B.Sc. Mechatronics Engineering, final grade 1.7",
+      "detail": "Thesis: ABS for Electric Vehicles using Linear MPC. Core studies included control systems, robotics and automation, kinematics and embedded systems."
     }
   },
   "about": {

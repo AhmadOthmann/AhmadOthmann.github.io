@@ -100,7 +100,11 @@
     updateThemeColor();
   });
 
-  systemDark.addEventListener("change", updateThemeColor);
+  if (typeof systemDark.addEventListener === "function") {
+    systemDark.addEventListener("change", updateThemeColor);
+  } else {
+    systemDark.addListener(updateThemeColor);
+  }
   updateThemeColor();
 
   const projectCards = [...document.querySelectorAll(".project-card")];
@@ -133,6 +137,15 @@
   });
 
   const toolMenus = [...document.querySelectorAll(".tool-menu")];
+  const supportedSectionHashes = new Set(["#top", "#projects", "#experience", "#about", "#contact"]);
+
+  if (supportedSectionHashes.has(window.location.hash)) {
+    document.querySelectorAll("[data-language-link]").forEach((link) => {
+      const destination = new URL(link.href);
+      destination.hash = window.location.hash;
+      link.href = `${destination.pathname}${destination.hash}`;
+    });
+  }
 
   toolMenus.forEach((menu) => {
     menu.addEventListener("toggle", () => {
@@ -149,10 +162,17 @@
     });
   });
 
+  document.addEventListener("focusin", (event) => {
+    toolMenus.forEach((menu) => {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
+    });
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Escape") return;
     const openMenu = toolMenus.find((menu) => menu.open);
     if (!openMenu) return;
+    event.preventDefault();
     openMenu.open = false;
     openMenu.querySelector("summary")?.focus();
   });

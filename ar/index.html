@@ -54,24 +54,25 @@
     </nav>
     <div class="header-tools" role="group" aria-label="إعدادات المظهر وإمكانية الوصول">
       <details class="tool-menu language-menu">
-          <summary aria-label="اللغة الحالية: العربية">
-            <span aria-hidden="true">AR</span>
+          <summary id="language-summary" aria-controls="language-options" aria-label="اللغة الحالية: العربية">
+            <span class="tool-badge" aria-hidden="true">AR</span>
             <span class="summary-label">اللغة</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
-          <ul>
-              <li><a href="/" hreflang="en" lang="en" dir="ltr"><span>English</span><span aria-hidden="true">EN</span></a></li>
-              <li><a href="/de/" hreflang="de" lang="de" dir="ltr"><span>Deutsch</span><span aria-hidden="true">DE</span></a></li>
-              <li><a href="/ar/" hreflang="ar" lang="ar" dir="rtl" aria-current="page"><span>العربية</span><span aria-hidden="true">AR</span></a></li>
+          <ul id="language-options">
+              <li><a href="/" hreflang="en" data-language-link><span class="language-name" lang="en" dir="ltr">English</span><span class="language-code" aria-hidden="true">EN</span><span class="language-check" aria-hidden="true"></span></a></li>
+              <li><a href="/de/" hreflang="de" data-language-link><span class="language-name" lang="de" dir="ltr">Deutsch</span><span class="language-code" aria-hidden="true">DE</span><span class="language-check" aria-hidden="true"></span></a></li>
+              <li><a href="/ar/" hreflang="ar" data-language-link aria-current="page"><span class="language-name" lang="ar" dir="rtl">العربية</span><span class="language-code" aria-hidden="true">AR</span><span class="language-check" aria-hidden="true">✓</span></a></li>
           </ul>
         </details>
       <details class="tool-menu appearance-menu">
-          <summary>
-            <span class="display-icon" aria-hidden="true">◐</span>
+          <summary id="appearance-summary" aria-controls="appearance-options">
+            <span class="display-icon tool-badge" aria-hidden="true">◐</span>
             <span class="summary-label">نمط العرض</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
-          <div class="appearance-panel">
+          <div class="appearance-panel" id="appearance-options" role="group" aria-labelledby="appearance-summary">
+            <p class="panel-title">إعدادات المظهر وإمكانية الوصول</p>
             <label class="select-setting">
               <span>نمط العرض</span>
               <select id="theme-select" aria-label="اختيار نمط العرض">
@@ -252,41 +253,144 @@
       </div>
     </section>
 
-    <section class="section experience" id="experience">
-      <div class="section-head"><div><p class="eyebrow">ملاحظات ميدانية</p><h2>من الأنظمة الصناعية إلى الاستقلالية</h2></div></div>
-      <div class="timeline">
-        <article>
-          <span class="period">2026</span>
-          <div>
-            <h3>RobCo، فريق الأنظمة ذاتية التشغيل</h3>
-            <p>مهندس ميكاترونيات ضمن وظيفة طلابية</p>
-            <span>النمذجة الروبوتية الأولية · التصميم بمساعدة الحاسوب · التصنيع بالإضافة · تكامل الأنظمة</span>
-          </div>
-        </article>
-        <article>
-          <span class="period">2025 حتى الآن</span>
-          <div>
-            <h3>جامعة ميونخ التقنية</h3>
-            <p>دراستان متوازيتان لدرجة الماجستير</p>
-            <span>هندسة الميكاترونيات والروبوتات والميكانيكا الحيوية · الذكاء الاصطناعي في المجتمع</span>
-          </div>
-        </article>
-        <article>
-          <span class="period">2024 إلى 2025</span>
-          <div>
-            <h3>GASCO</h3>
-            <p>مهندس SCADA وأتمتة</p>
-            <span>المراقبة الصناعية · البيانات التشغيلية · الصيانة التنبؤية · الموثوقية</span>
-          </div>
-        </article>
-        <article>
-          <span class="period">2023</span>
-          <div>
-            <h3>GUC × GIU Berlin</h3>
-            <p>بكالوريوس مزدوج في هندسة الميكاترونيات · التقدير 1.9</p>
-            <span>رسالة البكالوريوس: تحكم تنبؤي خطي لنظام منع انغلاق المكابح في مركبة كهربائية</span>
-          </div>
-        </article>
+    <section class="section career" id="experience">
+      <div class="section-head">
+        <div><p class="eyebrow">السيرة الذاتية / 2021 حتى الآن</p><h2>الخبرة والبحث والتعليم</h2></div>
+        <p>عرض مستند إلى السيرة الذاتية للأدوار المهنية والفرق البحثية والبرامج الدراسية التي صاغت عملي في الروبوتات والذكاء الاصطناعي الفيزيائي.</p>
+      </div>
+      <div class="career-groups">
+      <section class="career-group" aria-labelledby="career-professional-heading">
+        <div class="career-group-heading">
+          <span aria-hidden="true">01</span>
+          <h3 id="career-professional-heading">الخبرة المهنية</h3>
+        </div>
+        <div class="career-list">
+          <article class="career-card is-current">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">أبريل 2026 حتى الآن</span>
+              <span class="career-location" dir="auto">ميونخ، ألمانيا</span>
+              <span class="current-badge">حاليًا</span>
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">RobCo</h4>
+              <p class="career-role" dir="auto">مهندس روبوتات وميكاترونيات</p>
+              <p class="career-detail" dir="auto">أعمل على تطوير Autonomous Alfie وتنفيذ نماذج Pi0 VLA وخط بيانات التشغيل عن بُعد المستخدم في الضبط الدقيق، مع دمج السياسات المتعلّمة بمنظومة التحكم الميكاتروني الآني على عتاد إنتاجي.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">يناير 2025 إلى مارس 2026</span>
+              <span class="career-location" dir="auto">هجين</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Egyptian Natural Gas Company (GASCO)</h4>
+              <p class="career-role" dir="auto">مهندس ذكاء اصطناعي وأنظمة تحكم</p>
+              <p class="career-detail" dir="auto">طورت ونشرت مسارات للتنبؤ بتدفق الغاز واكتشاف الحالات الشاذة باستخدام XGBoost وProphet وLSTMs وAirflow، ثم استخرجت مؤشرات الصيانة التنبؤية من بيانات القياس عن بُعد عالية التردد.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">أبريل 2023 إلى ديسمبر 2024</span>
+              <span class="career-location" dir="auto">عن بُعد</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Huawei</h4>
+              <p class="career-role" dir="auto">مهندس تعلم آلي</p>
+              <p class="career-detail" dir="auto">درّبت ونشرت نماذج ResNet وEfficientNet وYOLOv8 لمراقبة الجودة البصرية في التطبيقات الصناعية، وحسّنت الاستدلال على الأجهزة الطرفية باستخدام TensorRT، وأطلقت خدمات FastAPI داخل حاويات Docker.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">أكتوبر 2022 إلى مارس 2023</span>
+              <span class="career-location" dir="auto">برلين، ألمانيا</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">ARAtronics Lab, GIU</h4>
+              <p class="career-role" dir="auto">قائد مشروع روبوتات</p>
+              <p class="career-detail" dir="auto">قدت التكامل الشامل لروبوت ري ذاتي التشغيل، بما يشمل تدفق البيانات عبر I2C وCAN، وإدراك السلامة باستخدام TinyML، وبرمجيات C++ ثابتة معيارية لمنظومات مستشعرات ESP32 وSTM32.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">يونيو 2022 إلى أكتوبر 2022</span>
+              <span class="career-location" dir="auto">القاهرة، مصر</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Multi-Robot Systems Lab, GUC</h4>
+              <p class="career-role" dir="auto">مهندس أنظمة ذاتية التشغيل</p>
+              <p class="career-detail" dir="auto">هيأت الملاحة باستخدام ROS لمركبات Ackermann مع LiDAR SLAM وتحديد الموقع عبر EKF، ثم ضبطت متحكمات PID وPure Pursuit في Gazebo.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">أكتوبر 2021 إلى يونيو 2022</span>
+              <span class="career-location" dir="auto">القاهرة، مصر</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Egyrobo for Robotic Systems</h4>
+              <p class="career-role" dir="auto">مهندس روبوتات</p>
+              <p class="career-detail" dir="auto">أجريت تحليلات D-H والحركيات العكسية لأذرع لحام آلية ذات 6 درجات حرية في MATLAB/Simulink، وطورت نظام تحكم مغلق الحلقة لتحديد الموضع.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="career-group" aria-labelledby="career-research-heading">
+        <div class="career-group-heading">
+          <span aria-hidden="true">02</span>
+          <h3 id="career-research-heading">البحث والجامعة</h3>
+        </div>
+        <div class="career-list">
+          <article class="career-card is-current">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">أبريل 2025 حتى الآن</span>
+              <span class="career-location" dir="auto">ميونخ، ألمانيا</span>
+              <span class="current-badge">حاليًا</span>
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">RoboTUM, Forrest Humanoid</h4>
+              <p class="career-role" dir="auto">Real-Time Cluster, Embedded to Software</p>
+              <p class="career-detail" dir="auto">أساهم في تطوير روبوت Forrest ثنائي الساقين والمشغّل بالأوتار، وأبني جسر التحكم الحتمي بين البرمجيات الثابتة المضمنة وحزمة البرمجيات.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="career-group" aria-labelledby="career-education-heading">
+        <div class="career-group-heading">
+          <span aria-hidden="true">03</span>
+          <h3 id="career-education-heading">التعليم الأكاديمي</h3>
+        </div>
+        <div class="career-list">
+          <article class="career-card is-current">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">أكتوبر 2025 إلى أبريل 2027</span>
+              <span class="career-location" dir="auto">ميونخ، ألمانيا</span>
+              <span class="current-badge">حاليًا</span>
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">Technical University of Munich</h4>
+              <p class="career-role" dir="auto">درجتا ماجستير متوازيتان في TUM</p>
+              <p class="career-detail" dir="auto">ماجستير العلوم في Mechatronics, Robotics &amp; Biomechanical Engineering وماجستير العلوم في AI in Society، ويشملان ديناميكيات الروبوت والتحكم، والتعلم العميق للروبوتات، ودمج المستشعرات، والتحكم القائم على التحسين، وحوكمة الذكاء الاصطناعي، وتنظيم الأنظمة ذاتية التشغيل.</p>
+            </div>
+          </article>
+          <article class="career-card">
+            <div class="career-meta">
+              <span class="career-period" dir="auto">سبتمبر 2018 إلى أغسطس 2021</span>
+              <span class="career-location" dir="auto">برلين، ألمانيا</span>
+
+            </div>
+            <div class="career-body">
+              <h4 dir="auto">German International University and German University in Cairo</h4>
+              <p class="career-role" dir="auto">بكالوريوس مزدوج في هندسة الميكاترونيات، التقدير النهائي 1.7</p>
+              <p class="career-detail" dir="auto">رسالة البكالوريوس: نظام ABS للمركبات الكهربائية باستخدام Linear MPC. شملت المقررات الأساسية أنظمة التحكم، والروبوتات والأتمتة، والحركيات، والأنظمة المضمنة.</p>
+            </div>
+          </article>
+        </div>
+      </section>
       </div>
     </section>
 

@@ -42,9 +42,14 @@
       "title": "Ausgewählte Engineering-Projekte",
       "intro": "Systeme aus Simulation, Regelungstechnik, Elektronik und physischem Prototyping."
     },
-    "experience": {
-      "eyebrow": "PRAXISSTATIONEN",
-      "title": "Von Industriesystemen zur Autonomie"
+    "career": {
+      "eyebrow": "LEBENSLAUF / 2021 BIS HEUTE",
+      "title": "Berufserfahrung, Forschung und Studium",
+      "intro": "Ein auf dem Lebenslauf basierender Überblick über die beruflichen Stationen, Forschungsteams und Studiengänge, die meine Arbeit in Robotik und Physical AI prägen.",
+      "professionalHeading": "Berufserfahrung",
+      "researchHeading": "Forschung und Universität",
+      "educationHeading": "Akademischer Werdegang",
+      "currentLabel": "Aktuell"
     }
   },
   "projects": {
@@ -135,30 +140,69 @@
       ]
     }
   },
-  "experience": {
+  "career": {
     "robco": {
-      "period": "2026",
-      "organization": "RobCo · Autonomy Team",
-      "role": "Werkstudent als Mechatronikingenieur",
-      "detail": "Robotik-Prototyping · CAD · Additive Fertigung · Systemintegration"
-    },
-    "tum": {
-      "period": "2025 bis heute",
-      "organization": "Technische Universität München",
-      "role": "Parallele Masterstudiengänge",
-      "detail": "Mechatronik, Robotik und Biomechanik · Künstliche Intelligenz in der Gesellschaft"
+      "period": "Apr. 2026 bis heute",
+      "location": "München, Deutschland",
+      "organization": "RobCo",
+      "role": "Ingenieur für Robotik und Mechatronik",
+      "detail": "Entwicklung von Autonomous Alfie, Implementierung von Pi0-VLA-Modellen und der Teleoperations-Datenpipeline für das Fine-Tuning sowie Integration gelernter Policies mit mechatronischer Echtzeitregelung auf Produktionshardware."
     },
     "gasco": {
-      "period": "2024 bis 2025",
-      "organization": "GASCO",
-      "role": "SCADA- und Automatisierungsingenieur",
-      "detail": "Industrielles Monitoring · Betriebsdaten · Predictive Maintenance · Zuverlässigkeit"
+      "period": "Jan. 2025 bis März 2026",
+      "location": "Hybrid",
+      "organization": "Egyptian Natural Gas Company (GASCO)",
+      "role": "Ingenieur für KI und Regelungssysteme",
+      "detail": "Entwicklung und Bereitstellung von Pipelines zur Gasdurchflussprognose und Anomalieerkennung mit XGBoost, Prophet, LSTMs und Airflow sowie Ableitung von Signalen für die vorausschauende Wartung aus hochfrequenten Telemetriedaten."
     },
-    "guc": {
-      "period": "2023",
-      "organization": "GUC × GIU Berlin",
-      "role": "Doppelabschluss B.Sc. Mechatronik · Note 1,9",
-      "detail": "Abschlussarbeit: Lineare MPC für das Antiblockiersystem eines Elektrofahrzeugs"
+    "huawei": {
+      "period": "Apr. 2023 bis Dez. 2024",
+      "location": "Remote",
+      "organization": "Huawei",
+      "role": "Ingenieur für maschinelles Lernen",
+      "detail": "Training und Deployment von ResNet-, EfficientNet- und YOLOv8-Modellen für die industrielle visuelle Qualitätskontrolle, Optimierung der Edge-Inferenz mit TensorRT sowie Bereitstellung von FastAPI-Diensten in Docker."
+    },
+    "aratronics": {
+      "period": "Okt. 2022 bis März 2023",
+      "location": "Berlin, Deutschland",
+      "organization": "ARAtronics Lab, GIU",
+      "role": "Projektleiter Robotik",
+      "detail": "Leitung der vollständigen Integration eines autonomen Bewässerungsroboters, einschließlich Datenfluss über I2C und CAN, TinyML-basierter Sicherheitswahrnehmung sowie modularer C++-Firmware für ESP32- und STM32-Sensorstacks."
+    },
+    "mrs": {
+      "period": "Juni 2022 bis Okt. 2022",
+      "location": "Kairo, Ägypten",
+      "organization": "Multi-Robot Systems Lab, GUC",
+      "role": "Ingenieur für autonome Systeme",
+      "detail": "Konfiguration der ROS-Navigation für Ackermann-Fahrzeuge mit LiDAR-SLAM und EKF-Lokalisierung sowie anschließende Abstimmung von PID- und Pure-Pursuit-Reglern in Gazebo."
+    },
+    "egyrobo": {
+      "period": "Okt. 2021 bis Juni 2022",
+      "location": "Kairo, Ägypten",
+      "organization": "Egyrobo for Robotic Systems",
+      "role": "Robotikingenieur",
+      "detail": "Durchführung von D-H- und Inverskinematik-Analysen für 6-DOF-Schweißmanipulatoren in MATLAB/Simulink sowie Entwicklung einer geschlossenen Positionsregelung."
+    },
+    "robotum": {
+      "period": "Apr. 2025 bis heute",
+      "location": "München, Deutschland",
+      "organization": "RoboTUM, Forrest Humanoid",
+      "role": "Real-Time Cluster, Embedded to Software",
+      "detail": "Mitarbeit am sehnengetriebenen zweibeinigen Forrest-Roboter und Entwicklung der deterministischen Regelungsschnittstelle zwischen Embedded-Firmware und Software-Stack."
+    },
+    "tum": {
+      "period": "Okt. 2025 bis Apr. 2027",
+      "location": "München, Deutschland",
+      "organization": "Technical University of Munich",
+      "role": "Paralleles Doppelstudium, zwei M.Sc.-Programme an der TUM",
+      "detail": "M.Sc. Mechatronics, Robotics & Biomechanical Engineering und M.Sc. AI in Society mit Schwerpunkten auf Roboterdynamik und Regelung, Deep Learning für Robotik, Sensorfusion, optimierungsbasierter Regelung, KI-Governance und Regulierung autonomer Systeme."
+    },
+    "bachelors": {
+      "period": "Sep. 2018 bis Aug. 2021",
+      "location": "Berlin, Deutschland",
+      "organization": "German International University and German University in Cairo",
+      "role": "Doppelabschluss B.Sc. Mechatronik, Abschlussnote 1,7",
+      "detail": "Abschlussarbeit: ABS für Elektrofahrzeuge mit linearem MPC. Zu den Kernfächern gehörten Regelungstechnik, Robotik und Automatisierung, Kinematik sowie Embedded Systems."
     }
   },
   "about": {

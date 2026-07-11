@@ -49,10 +49,12 @@ class PageParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.tags: Counter[str] = Counter()
+        self.classes: Counter[str] = Counter()
         self.ids: list[str] = []
         self.references: list[tuple[str, str, str]] = []
         self.images: list[dict[str, str]] = []
         self.blank_links: list[dict[str, str]] = []
+        self.language_links: list[dict[str, str]] = []
         self.inline_scripts: list[str] = []
         self.inline_styles_or_handlers: list[str] = []
         self.meta: dict[str, str] = {}
@@ -76,6 +78,8 @@ class PageParser(HTMLParser):
             self.html_attrs = values
         if "id" in values:
             self.ids.append(values["id"])
+        for class_name in values.get("class", "").split():
+            self.classes[class_name] += 1
         if tag == "title":
             self._inside_title = True
         if tag == "script" and not values.get("src"):
@@ -93,6 +97,8 @@ class PageParser(HTMLParser):
             self.images.append(values)
         if tag == "a" and values.get("target", "").lower() == "_blank":
             self.blank_links.append(values)
+        if tag == "a" and "data-language-link" in values:
+            self.language_links.append(values)
         for attr in values:
             if attr == "style" or attr.startswith("on"):
                 self.inline_styles_or_handlers.append(f"<{tag}> {attr}")
@@ -178,6 +184,22 @@ def check_page_metadata(
         add_error(errors, relative_path, "main content needs id=\"main-content\"")
     if not any(tag == "a" and value == "#main-content" for tag, _, value in parser.references):
         add_error(errors, relative_path, "skip-to-content link is missing")
+
+    if parser.classes["career-card"] != 9:
+        add_error(errors, relative_path, "must contain all nine resume-based career entries")
+    if parser.classes["current-badge"] != 3:
+        add_error(errors, relative_path, "must identify the three current career entries")
+    if parser.classes["timeline"]:
+        add_error(errors, relative_path, "legacy timeline markup must not be present")
+    if parser.classes["tool-menu"] != 2:
+        add_error(errors, relative_path, "must contain language and appearance dropdowns")
+    for control_id in ("language-options", "appearance-options", "theme-select"):
+        if control_id not in parser.ids:
+            add_error(errors, relative_path, f"dropdown control {control_id!r} is missing")
+    if len(parser.language_links) != 3:
+        add_error(errors, relative_path, "language dropdown must contain exactly three locale links")
+    elif sum("page" in link.get("aria-current", "").lower().split() for link in parser.language_links) != 1:
+        add_error(errors, relative_path, "language dropdown must identify exactly one current locale")
 
     for image in parser.images:
         if "alt" not in image:
