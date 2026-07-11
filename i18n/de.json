@@ -43,11 +43,11 @@
       "intro": "Systeme aus Simulation, Regelungstechnik, Elektronik und physischem Prototyping."
     },
     "career": {
-      "eyebrow": "LEBENSLAUF / 2021 BIS HEUTE",
+      "eyebrow": "LEBENSLAUF / 2018 BIS HEUTE",
       "title": "Berufserfahrung, Forschung und Studium",
-      "intro": "Ein auf dem Lebenslauf basierender Überblick über die beruflichen Stationen, Forschungsteams und Studiengänge, die meine Arbeit in Robotik und Physical AI prägen.",
+      "intro": "Berufliche Stationen, Forschungsteams und Studiengänge, die meine Arbeit in Robotik und Physical AI prägen.",
       "professionalHeading": "Berufserfahrung",
-      "researchHeading": "Forschung und Universität",
+      "researchHeading": "Universitäre Forschung",
       "educationHeading": "Akademischer Werdegang",
       "currentLabel": "Aktuell"
     }
@@ -187,21 +187,21 @@
       "period": "Apr. 2025 bis heute",
       "location": "München, Deutschland",
       "organization": "RoboTUM, Forrest Humanoid",
-      "role": "Real-Time Cluster, Embedded to Software",
+      "role": "Real-Time Cluster, Integration von Embedded-Systemen und Software",
       "detail": "Mitarbeit am sehnengetriebenen zweibeinigen Forrest-Roboter und Entwicklung der deterministischen Regelungsschnittstelle zwischen Embedded-Firmware und Software-Stack."
     },
     "tum": {
       "period": "Okt. 2025 bis Apr. 2027",
       "location": "München, Deutschland",
-      "organization": "Technical University of Munich",
-      "role": "Paralleles Doppelstudium, zwei M.Sc.-Programme an der TUM",
+      "organization": "Technische Universität München (TUM)",
+      "role": "Zwei parallele M.Sc.-Studiengänge",
       "detail": "M.Sc. Mechatronics, Robotics & Biomechanical Engineering und M.Sc. AI in Society mit Schwerpunkten auf Roboterdynamik und Regelung, Deep Learning für Robotik, Sensorfusion, optimierungsbasierter Regelung, KI-Governance und Regulierung autonomer Systeme."
     },
     "bachelors": {
-      "period": "Sep. 2018 bis Aug. 2021",
+      "period": "Sept. 2018 bis Aug. 2021",
       "location": "Berlin, Deutschland",
-      "organization": "German International University and German University in Cairo",
-      "role": "Doppelabschluss B.Sc. Mechatronik, Abschlussnote 1,7",
+      "organization": "German International University und German University in Cairo",
+      "role": "Doppelabschluss in Mechatronik (B.Sc.), Abschlussnote 1,7",
       "detail": "Abschlussarbeit: ABS für Elektrofahrzeuge mit linearem MPC. Zu den Kernfächern gehörten Regelungstechnik, Robotik und Automatisierung, Kinematik sowie Embedded Systems."
     }
   },

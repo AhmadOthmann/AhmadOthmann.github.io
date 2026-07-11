@@ -771,11 +771,15 @@ img {
 }
 
 .section-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 30rem);
   align-items: end;
-  justify-content: space-between;
-  gap: 2rem;
+  gap: clamp(2rem, 5vw, 5rem);
   margin-block-end: 2.6rem;
+}
+
+.section-head > div {
+  min-width: 0;
 }
 
 .section-head h2,
@@ -786,11 +790,13 @@ footer h2 {
   font-size: clamp(2.5rem, 5vw, 4.9rem);
   letter-spacing: -0.06em;
   line-height: 0.98;
+  text-wrap: balance;
 }
 
 .section-head > p {
   max-width: 30rem;
   margin: 0;
+  justify-self: end;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -1009,10 +1015,14 @@ footer h2 {
 }
 
 .career-group-heading > span {
+  min-width: 2ch;
+  flex: 0 0 auto;
   font: 800 0.75rem var(--font-mono);
+  text-align: center;
 }
 
 .career-group-heading h3 {
+  flex: 1 1 auto;
   margin: 0;
   font-size: clamp(1.4rem, 2vw, 2rem);
   letter-spacing: -0.025em;
@@ -1033,7 +1043,8 @@ footer h2 {
 }
 
 .career-card.is-current {
-  border-block-start: 3px solid var(--cyan);
+  border-block-start-color: var(--cyan);
+  box-shadow: inset 0 2px 0 var(--cyan);
 }
 
 .career-list > .career-card:only-child {
@@ -1041,20 +1052,30 @@ footer h2 {
 }
 
 .career-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.75rem 1rem;
+  margin-block-end: 1.15rem;
+}
+
+.career-facts {
+  min-width: 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.55rem 0.8rem;
-  margin-block-end: 1.15rem;
   font: 0.75rem/1.5 var(--font-mono);
 }
 
 .career-period {
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .career-location {
   color: var(--experience-muted);
+  white-space: nowrap;
 }
 
 .career-location::before {
@@ -1064,13 +1085,14 @@ footer h2 {
 }
 
 .current-badge {
-  margin-inline-start: auto;
+  margin: 0;
   padding: 0.25rem 0.5rem;
   border: 1px solid var(--cyan);
   color: var(--cyan);
   font: 800 0.68rem var(--font-mono);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .career-body h4 {
@@ -1081,6 +1103,10 @@ footer h2 {
   line-height: 1.15;
 }
 
+.career-body {
+  text-align: start;
+}
+
 .career-role {
   margin: 0.45rem 0 0;
   color: var(--cyan);
@@ -1088,7 +1114,7 @@ footer h2 {
 }
 
 .career-detail {
-  max-width: 68rem;
+  max-inline-size: 72ch;
   margin: 1rem 0 0;
   color: var(--experience-muted);
   line-height: 1.7;
@@ -1182,6 +1208,16 @@ html[dir="rtl"] .career-body h4 {
   letter-spacing: 0;
 }
 
+html[dir="rtl"] .career .section-head h2,
+html[dir="rtl"] .career-group-heading h3 {
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .career-facts,
+html[dir="rtl"] .current-badge {
+  font-family: Tahoma, Arial, "Segoe UI", sans-serif;
+}
+
 html[dir="rtl"] .link {
   transform-origin: right center;
 }
@@ -1238,6 +1274,26 @@ html[data-theme="contrast"] .select-setting select {
     inset-inline-end: clamp(0.8rem, 4vw, 4.25rem);
     max-block-size: calc(100vh - 8.5rem);
     max-block-size: calc(100dvh - 8.5rem);
+  }
+}
+
+@media (max-width: 60rem) {
+  .career .section-head {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.25rem;
+  }
+
+  .career .section-head > p {
+    max-width: 44rem;
+    margin: 0;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 56rem) {
+  .career-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1306,11 +1362,13 @@ html[data-theme="contrast"] .select-setting select {
   }
 
   .section-head {
-    display: block;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.25rem;
   }
 
   .section-head > p {
-    margin-block-start: 1.25rem;
+    justify-self: start;
   }
 
   .project-grid {
@@ -1338,10 +1396,26 @@ html[data-theme="contrast"] .select-setting select {
     border-block-end: 1px solid var(--line);
   }
 
-  .career-list {
+}
+
+@media (max-width: 32rem) {
+  .career-meta {
     grid-template-columns: 1fr;
   }
 
+  .career-facts {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .career-location::before {
+    display: none;
+  }
+
+  .current-badge {
+    justify-self: start;
+  }
 }
 
 @media (max-width: 24rem) {

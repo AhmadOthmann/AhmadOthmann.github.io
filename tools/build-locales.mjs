@@ -133,14 +133,16 @@ function renderCareerItem(key, t) {
   const currentBadge = isCurrent ? `<span class="current-badge">${escapeHtml(t.sections.career.currentLabel)}</span>` : "";
   return `          <article class="${classes}">
             <div class="career-meta">
-              <span class="career-period" dir="auto">${escapeHtml(item.period)}</span>
-              <span class="career-location" dir="auto">${escapeHtml(item.location)}</span>
+              <div class="career-facts">
+                <span class="career-period"><bdi dir="auto">${escapeHtml(item.period)}</bdi></span>
+                <span class="career-location"><bdi dir="auto">${escapeHtml(item.location)}</bdi></span>
+              </div>
 ${currentBadge ? `              ${currentBadge}` : ""}
             </div>
             <div class="career-body">
-              <h4 dir="auto">${escapeHtml(item.organization)}</h4>
-              <p class="career-role" dir="auto">${escapeHtml(item.role)}</p>
-              <p class="career-detail" dir="auto">${escapeHtml(item.detail)}</p>
+              <h4><bdi dir="auto">${escapeHtml(item.organization)}</bdi></h4>
+              <p class="career-role"><bdi dir="auto">${escapeHtml(item.role)}</bdi></p>
+              <p class="career-detail"><bdi dir="auto">${escapeHtml(item.detail)}</bdi></p>
             </div>
           </article>`;
 }

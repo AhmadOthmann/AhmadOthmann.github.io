@@ -187,6 +187,8 @@ def check_page_metadata(
 
     if parser.classes["career-card"] != 9:
         add_error(errors, relative_path, "must contain all nine resume-based career entries")
+    if parser.classes["career-facts"] != 9:
+        add_error(errors, relative_path, "every career entry must use aligned date and location facts")
     if parser.classes["current-badge"] != 3:
         add_error(errors, relative_path, "must identify the three current career entries")
     if parser.classes["timeline"]:

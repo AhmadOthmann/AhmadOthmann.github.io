@@ -43,11 +43,11 @@
       "intro": "Systems built across simulation, control, electronics and physical prototyping."
     },
     "career": {
-      "eyebrow": "RESUME / 2021 TO PRESENT",
-      "title": "Experience, research and education",
-      "intro": "A resume-based view of the roles, research teams and degree programs shaping my work in robotics and Physical AI.",
-      "professionalHeading": "Professional experience",
-      "researchHeading": "Research and university",
+      "eyebrow": "RESUME / 2018 TO PRESENT",
+      "title": "Experience, Research, and Education",
+      "intro": "Roles, research teams and degree programs shaping my work in robotics and Physical AI.",
+      "professionalHeading": "Professional Experience",
+      "researchHeading": "University Research",
       "educationHeading": "Education",
       "currentLabel": "Current"
     }
@@ -108,7 +108,7 @@
       "period": "Apr 2026 to Present",
       "location": "Munich, Germany",
       "organization": "RobCo",
-      "role": "Robotics Mechatronics Engineer",
+      "role": "Robotics and Mechatronics Engineer",
       "detail": "Building Autonomous Alfie, implementing Pi0 VLA models and the teleoperation data pipeline for fine-tuning, and integrating learned policies with real-time mechatronic control on production hardware."
     },
     "gasco": {
@@ -150,21 +150,21 @@
       "period": "Apr 2025 to Present",
       "location": "Munich, Germany",
       "organization": "RoboTUM, Forrest Humanoid",
-      "role": "Real-Time Cluster, Embedded to Software",
+      "role": "Real-Time Cluster, Embedded-to-Software Integration",
       "detail": "Contributing to the tendon-driven Forrest biped and building the deterministic control bridge between embedded firmware and the software stack."
     },
     "tum": {
       "period": "Oct 2025 to Apr 2027",
       "location": "Munich, Germany",
       "organization": "Technical University of Munich",
-      "role": "Dual M.Sc. at TUM, parallel programs",
+      "role": "Parallel M.Sc. programs",
       "detail": "M.Sc. Mechatronics, Robotics & Biomechanical Engineering and M.Sc. AI in Society, spanning robot dynamics and control, deep learning for robotics, sensor fusion, optimization-based control, AI governance and autonomous-systems regulation."
     },
     "bachelors": {
       "period": "Sep 2018 to Aug 2021",
       "location": "Berlin, Germany",
       "organization": "German International University and German University in Cairo",
-      "role": "Dual B.Sc. Mechatronics Engineering, final grade 1.7",
+      "role": "Dual B.Sc. in Mechatronics Engineering, final grade 1.7",
       "detail": "Thesis: ABS for Electric Vehicles using Linear MPC. Core studies included control systems, robotics and automation, kinematics and embedded systems."
     }
   },
