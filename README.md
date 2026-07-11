@@ -30,14 +30,15 @@ Every push to `main` updates the GitHub Pages website. No compilation, package i
 
 ## Selected work
 
-| Project | Focus | Technologies |
-|---|---|---|
-| [Sofia Atlas Travel](https://github.com/AhmadOthmann/Sofia-Atlas-Travel) | Autonomous multilingual sales qualification and workflow observability | HappyRobot, Next.js, AI agents, webhooks |
-| Autonomous Ackermann Vehicle | Localization, path tracking and embedded actuation | ROS, Gazebo, Raspberry Pi, IMU |
-| EV Anti-lock Braking | Linear model predictive control for wheel-slip regulation | MATLAB/Simulink, MPC |
-| Multi-Manipulator Pick & Place | Coordinated manipulation and visual localization | Robotics, ArUco, computer vision |
-| Tensegrity Rolling Robot | Cable-actuated locomotion and compliant structures | Mechanical design, control, prototyping |
-| Autonomous Irrigation | Distributed sensing and moisture-driven control | Microcontrollers, PWM, sensors |
+| Identity | Project | Focus | Technologies |
+|---|---|---|---|
+| <img src="assets/project-logos/sofia-atlas-compass.webp" width="52" alt="Atlas Travel compass logo"> | [Sofia Atlas Travel](https://github.com/AhmadOthmann/Sofia-Atlas-Travel) | Autonomous multilingual sales qualification and workflow observability | HappyRobot, Next.js, AI agents, webhooks |
+| <img src="assets/project-logos/ackermann-vehicle.webp" width="52" alt="Ackermann vehicle logo"> | Autonomous Ackermann Vehicle | Localization, path tracking and embedded actuation | ROS, Gazebo, Raspberry Pi, IMU |
+| <img src="assets/project-logos/ev-abs-mpc.webp" width="52" alt="EV ABS MPC logo"> | EV Anti-lock Braking | Linear model predictive control for wheel-slip regulation | MATLAB/Simulink, MPC |
+| <img src="assets/project-logos/multi-manipulator.webp" width="52" alt="Multi-manipulator logo"> | Multi-Manipulator Pick & Place | Coordinated manipulation and visual localization | Robotics, ArUco, computer vision |
+| <img src="assets/project-logos/tensegrity-robot.webp" width="52" alt="Tensegrity robot logo"> | Tensegrity Rolling Robot | Cable-actuated locomotion and compliant structures | Mechanical design, control, prototyping |
+| <img src="assets/project-logos/autonomous-irrigation.webp" width="52" alt="Autonomous irrigation logo"> | Autonomous Irrigation | Distributed sensing and moisture-driven control | Microcontrollers, PWM, sensors |
+| <img src="assets/project-logos/connect-four-ai.webp" width="52" alt="Connect Four AI logo"> | Connect Four AI Agent | Adversarial search and board-state evaluation | Python, algorithms, game AI |
 
 ## Engineering focus
 
