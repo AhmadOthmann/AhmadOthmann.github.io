@@ -171,6 +171,7 @@
   "about": {
     "eyebrow": "OPERATING PRINCIPLE",
     "title": "Bridge the layers.",
+    "portraitAlt": "Portrait of Ahmed Othman",
     "paragraphOne": "I work at the boundary between autonomy software and physical machines: sensing, control, embedded execution, mechanical integration and testing.",
     "paragraphTwo": "My industrial background adds a reliability-first perspective. I care about systems that survive noisy sensors, imperfect hardware and real operating constraints, not just clean simulations.",
     "principles": ["01 / MODEL", "02 / BUILD", "03 / TEST", "04 / ITERATE"]

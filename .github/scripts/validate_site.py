@@ -201,6 +201,8 @@ def check_page_metadata(
         add_error(errors, relative_path, "must contain all seven project logo stages")
     if parser.classes["details-indicator"] != 7:
         add_error(errors, relative_path, "every project disclosure must use a vector indicator")
+    if parser.classes["portrait-frame"] != 1 or parser.classes["profile-portrait"] != 1:
+        add_error(errors, relative_path, "must contain one framed profile portrait")
     for control_id in ("language-options", "appearance-options", "theme-select"):
         if control_id not in parser.ids:
             add_error(errors, relative_path, f"dropdown control {control_id!r} is missing")
@@ -212,6 +214,8 @@ def check_page_metadata(
     for image in parser.images:
         if "alt" not in image:
             add_error(errors, relative_path, f"image {image.get('src', '<unknown>')!r} has no alt attribute")
+        if "profile-portrait" in image.get("class", "").split() and not image.get("alt", "").strip():
+            add_error(errors, relative_path, "profile portrait needs meaningful alternative text")
     for link in parser.blank_links:
         if "noopener" not in link.get("rel", "").lower().split():
             add_error(errors, relative_path, f"target=_blank link lacks rel=noopener: {link.get('href', '<unknown>')}")

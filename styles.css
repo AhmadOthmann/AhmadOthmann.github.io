@@ -1123,7 +1123,57 @@ footer h2 {
 .about {
   display: grid;
   grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
-  gap: 4.5rem;
+  align-items: start;
+  column-gap: clamp(3rem, 6vw, 5.5rem);
+  row-gap: clamp(2.5rem, 4vw, 4rem);
+}
+
+.about-heading {
+  min-width: 0;
+}
+
+.portrait-frame {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  margin-block-start: clamp(2rem, 4vw, 3.25rem);
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+  padding: 0.7rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.portrait-frame::before,
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.portrait-frame::before {
+  inset: 1rem;
+  z-index: 1;
+  border: 1px solid rgb(255 255 255 / 32%);
+}
+
+.portrait-frame::after {
+  inset-block-start: 0.65rem;
+  inset-block-end: -0.65rem;
+  inset-inline-start: 0.65rem;
+  inset-inline-end: -0.65rem;
+  z-index: -1;
+  border: 1px solid var(--blue);
+}
+
+.profile-portrait {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: var(--ink);
 }
 
 .about-copy {
@@ -1230,11 +1280,20 @@ html[data-theme="contrast"] a:not(.primary) {
 
 html[data-theme="contrast"] .project-card,
 html[data-theme="contrast"] .career-card,
+html[data-theme="contrast"] .portrait-frame,
 html[data-theme="contrast"] .tool-menu > summary,
 html[data-theme="contrast"] .appearance-panel,
 html[data-theme="contrast"] .language-menu ul,
 html[data-theme="contrast"] .filters button,
 html[data-theme="contrast"] .select-setting select {
+  border-width: 2px;
+}
+
+html[data-theme="contrast"] .portrait-frame::before {
+  border-color: var(--line);
+}
+
+html[data-theme="contrast"] .portrait-frame::after {
   border-width: 2px;
 }
 
@@ -1384,6 +1443,12 @@ html[data-theme="contrast"] .select-setting select {
     gap: 2rem;
   }
 
+  .portrait-frame {
+    width: min(100%, 20rem);
+    margin-block-start: 2rem;
+    margin-inline: auto;
+  }
+
   .principles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1477,6 +1542,10 @@ html[data-motion="reduce"] *::after {
 
   .project-visual img {
     forced-color-adjust: auto;
+  }
+
+  .profile-portrait {
+    forced-color-adjust: none;
   }
 
   :focus-visible {

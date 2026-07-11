@@ -208,6 +208,7 @@
   "about": {
     "eyebrow": "ARBEITSPRINZIP",
     "title": "Die Ebenen verbinden.",
+    "portraitAlt": "Porträt von Ahmed Othman",
     "paragraphOne": "Ich arbeite an der Schnittstelle von Autonomie-Software und physischen Maschinen: Sensorik, Regelungstechnik, Embedded-Implementierung, mechanische Integration und Tests.",
     "paragraphTwo": "Mein industrieller Hintergrund prägt meinen Fokus auf Zuverlässigkeit. Ich entwickle Systeme, die mit verrauschten Sensoren, unvollkommener Hardware und realen Betriebsbedingungen funktionieren, nicht nur in idealisierten Simulationen.",
     "principles": [

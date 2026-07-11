@@ -315,7 +315,13 @@ ${career}
     </section>
 
     <section class="section about" id="about">
-      <div><p class="eyebrow">${escapeHtml(t.about.eyebrow)}</p><h2>${escapeHtml(t.about.title)}</h2></div>
+      <div class="about-heading">
+        <p class="eyebrow">${escapeHtml(t.about.eyebrow)}</p>
+        <h2>${escapeHtml(t.about.title)}</h2>
+        <div class="portrait-frame">
+          <img class="profile-portrait" src="/assets/ahmed-othman-portrait.webp?v=${assetVersions["assets/ahmed-othman-portrait.webp"]}" alt="${escapeHtml(t.about.portraitAlt)}" width="400" height="400" loading="lazy" decoding="async">
+        </div>
+      </div>
       <div class="about-copy"><p>${escapeHtml(t.about.paragraphOne)}</p><p>${escapeHtml(t.about.paragraphTwo)}</p></div>
       <div class="principles">${principles}</div>
     </section>
@@ -335,7 +341,7 @@ ${career}
 `;
 }
 
-const cacheableAssets = ["theme-init.js", "styles.css", "script.js"];
+const cacheableAssets = ["theme-init.js", "styles.css", "script.js", "assets/ahmed-othman-portrait.webp"];
 const assetVersions = Object.fromEntries(await Promise.all(cacheableAssets.map(async (asset) => {
   const source = await readFile(join(root, asset));
   return [asset, createHash("sha256").update(source).digest("hex").slice(0, 12)];
