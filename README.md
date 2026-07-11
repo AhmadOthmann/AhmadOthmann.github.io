@@ -121,6 +121,10 @@ The generator uses only built-in Node.js modules and the validator uses only the
 
 GitHub Pages publishes the static site from the repository's configured `main` branch. After a push, confirm the Pages deployment in the repository Actions tab and verify all three public language URLs.
 
+## License
+
+Licensed under the [MIT License](LICENSE).
+
 ## Contact
 
 [LinkedIn](https://www.linkedin.com/in/ahmedothman-) · [GitHub](https://github.com/AhmadOthmann) · [ahmad.mahmoud@tum.de](mailto:ahmad.mahmoud@tum.de)

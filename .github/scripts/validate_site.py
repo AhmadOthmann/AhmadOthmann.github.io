@@ -193,6 +193,12 @@ def check_page_metadata(
         add_error(errors, relative_path, "legacy timeline markup must not be present")
     if parser.classes["tool-menu"] != 2:
         add_error(errors, relative_path, "must contain language and appearance dropdowns")
+    if parser.classes["chevron"] != 2:
+        add_error(errors, relative_path, "both dropdowns must use vector chevrons")
+    if parser.classes["project-visual"] != 7:
+        add_error(errors, relative_path, "must contain all seven project logo stages")
+    if parser.classes["details-indicator"] != 7:
+        add_error(errors, relative_path, "every project disclosure must use a vector indicator")
     for control_id in ("language-options", "appearance-options", "theme-select"):
         if control_id not in parser.ids:
             add_error(errors, relative_path, f"dropdown control {control_id!r} is missing")

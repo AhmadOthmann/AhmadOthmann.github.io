@@ -61,7 +61,7 @@ function renderLanguageMenu(locale, translations) {
           <summary id="language-summary" aria-controls="language-options" aria-label="${escapeHtml(format(translations[locale].accessibility.currentLanguage, { language: current }))}">
             <span class="tool-badge" aria-hidden="true">${locales[locale].short}</span>
             <span class="summary-label">${escapeHtml(translations[locale].accessibility.languageLabel)}</span>
-            <span class="chevron" aria-hidden="true">⌄</span>
+            <svg class="chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="m3.5 6 4.5 4 4.5-4" /></svg>
           </summary>
           <ul id="language-options">
 ${links}
@@ -74,7 +74,7 @@ function renderAppearanceMenu(t) {
           <summary id="appearance-summary" aria-controls="appearance-options">
             <span class="display-icon tool-badge" aria-hidden="true">◐</span>
             <span class="summary-label">${escapeHtml(t.accessibility.appearanceLabel)}</span>
-            <span class="chevron" aria-hidden="true">⌄</span>
+            <svg class="chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="m3.5 6 4.5 4 4.5-4" /></svg>
           </summary>
           <div class="appearance-panel" id="appearance-options" role="group" aria-labelledby="appearance-summary">
             <p class="panel-title">${escapeHtml(t.accessibility.settingsLabel)}</p>
@@ -117,7 +117,7 @@ function renderProject(definition, t) {
           <p class="project-summary">${escapeHtml(project.summary)}</p>
           <ul class="tags">${tags}</ul>
           <details class="project-more">
-            <summary>${escapeHtml(t.modal.viewDetails)} <span aria-hidden="true">↘</span></summary>
+            <summary>${escapeHtml(t.modal.viewDetails)} <svg class="details-indicator" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M3 8h10" /><path class="indicator-vertical" d="M8 3v10" /></svg></summary>
             <div class="project-detail">
               <p>${escapeHtml(project.detail)}</p>
 ${repository ? `              ${repository}` : ""}
