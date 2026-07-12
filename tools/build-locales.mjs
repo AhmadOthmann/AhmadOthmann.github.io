@@ -272,14 +272,19 @@ ${alternateLocales.map((ogLocale) => `  <meta property="og:locale:alternate" con
         </div>
         <p class="stack-line"><strong>${escapeHtml(t.hero.coreStackLabel)}</strong><bdi>${escapeHtml(t.hero.coreStack)}</bdi></p>
       </div>
-      <div class="hero-system" aria-hidden="true">
-        <div class="system-grid"></div><div class="orbit o1"></div><div class="orbit o2"></div>
-        <div class="joint j1"><i></i></div><div class="link l1"></div>
-        <div class="joint j2"><i></i></div><div class="link l2"></div>
-        <div class="effector"><i></i><i></i><i></i></div>
-        <span class="telemetry t1">${escapeHtml(t.hero.telemetryJoint)}</span>
-        <span class="telemetry t2">${escapeHtml(t.hero.telemetryControl)}</span>
-        <span class="telemetry t3">${escapeHtml(t.hero.telemetryState)}</span>
+      <div class="hero-system">
+        <div class="hero-diagram" aria-hidden="true">
+          <div class="system-grid"></div><div class="orbit o1"></div><div class="orbit o2"></div>
+          <div class="joint j1"><i></i></div><div class="link l1"></div>
+          <div class="joint j2"><i></i></div><div class="link l2"></div>
+          <div class="effector"><i></i><i></i><i></i></div>
+          <span class="telemetry t1">${escapeHtml(t.hero.telemetryJoint)}</span>
+          <span class="telemetry t2">${escapeHtml(t.hero.telemetryControl)}</span>
+          <span class="telemetry t3">${escapeHtml(t.hero.telemetryState)}</span>
+        </div>
+        <div class="hero-portrait-frame">
+          <img class="profile-portrait" src="/assets/ahmed-othman-portrait.webp?v=${assetVersions["assets/ahmed-othman-portrait.webp"]}" alt="${escapeHtml(t.about.portraitAlt)}" width="1254" height="1254" decoding="async" fetchpriority="high">
+        </div>
       </div>
     </section>
 
@@ -315,13 +320,7 @@ ${career}
     </section>
 
     <section class="section about" id="about">
-      <div class="about-heading">
-        <p class="eyebrow">${escapeHtml(t.about.eyebrow)}</p>
-        <h2>${escapeHtml(t.about.title)}</h2>
-        <div class="portrait-frame">
-          <img class="profile-portrait" src="/assets/ahmed-othman-portrait.webp?v=${assetVersions["assets/ahmed-othman-portrait.webp"]}" alt="${escapeHtml(t.about.portraitAlt)}" width="400" height="400" loading="lazy" decoding="async">
-        </div>
-      </div>
+      <div><p class="eyebrow">${escapeHtml(t.about.eyebrow)}</p><h2>${escapeHtml(t.about.title)}</h2></div>
       <div class="about-copy"><p>${escapeHtml(t.about.paragraphOne)}</p><p>${escapeHtml(t.about.paragraphTwo)}</p></div>
       <div class="principles">${principles}</div>
     </section>

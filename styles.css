@@ -625,6 +625,56 @@ img {
   background: linear-gradient(135deg, var(--surface-soft), var(--surface));
 }
 
+.hero-diagram {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-portrait-frame {
+  position: absolute;
+  inset-inline-end: clamp(1.25rem, 3vw, 3rem);
+  inset-block-end: clamp(1.75rem, 4vw, 3rem);
+  z-index: 4;
+  isolation: isolate;
+  width: clamp(14rem, 19vw, 18rem);
+  aspect-ratio: 1;
+  padding: 0.72rem;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  box-shadow: 0 1.5rem 4rem rgb(14 25 40 / 26%);
+}
+
+.hero-portrait-frame::before,
+.hero-portrait-frame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-portrait-frame::before {
+  inset: 1rem;
+  z-index: 1;
+  border: 1px solid rgb(255 255 255 / 32%);
+}
+
+.hero-portrait-frame::after {
+  inset-block-start: 0.65rem;
+  inset-block-end: -0.65rem;
+  inset-inline-start: 0.65rem;
+  inset-inline-end: -0.65rem;
+  z-index: -1;
+  border: 1px solid var(--blue);
+}
+
+.profile-portrait {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: var(--ink);
+}
+
 .system-grid {
   position: absolute;
   inset: 0;
@@ -755,12 +805,12 @@ img {
 
 .t2 {
   inset-inline-end: 8%;
-  inset-block-start: 68%;
+  inset-block-start: 42%;
   color: var(--orange-text);
 }
 
 .t3 {
-  inset-inline-end: 8%;
+  inset-inline-start: 8%;
   inset-block-end: 8%;
   color: var(--blue-deep);
 }
@@ -1128,54 +1178,6 @@ footer h2 {
   row-gap: clamp(2.5rem, 4vw, 4rem);
 }
 
-.about-heading {
-  min-width: 0;
-}
-
-.portrait-frame {
-  position: relative;
-  isolation: isolate;
-  width: min(100%, 22rem);
-  aspect-ratio: 1;
-  margin-block-start: clamp(2rem, 4vw, 3.25rem);
-  margin-inline-start: auto;
-  margin-inline-end: 0;
-  padding: 0.7rem;
-  border: 1px solid var(--line-strong);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.portrait-frame::before,
-.portrait-frame::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-.portrait-frame::before {
-  inset: 1rem;
-  z-index: 1;
-  border: 1px solid rgb(255 255 255 / 32%);
-}
-
-.portrait-frame::after {
-  inset-block-start: 0.65rem;
-  inset-block-end: -0.65rem;
-  inset-inline-start: 0.65rem;
-  inset-inline-end: -0.65rem;
-  z-index: -1;
-  border: 1px solid var(--blue);
-}
-
-.profile-portrait {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  background: var(--ink);
-}
-
 .about-copy {
   font-size: clamp(1.25rem, 2vw, 1.8rem);
   line-height: 1.55;
@@ -1280,7 +1282,7 @@ html[data-theme="contrast"] a:not(.primary) {
 
 html[data-theme="contrast"] .project-card,
 html[data-theme="contrast"] .career-card,
-html[data-theme="contrast"] .portrait-frame,
+html[data-theme="contrast"] .hero-portrait-frame,
 html[data-theme="contrast"] .tool-menu > summary,
 html[data-theme="contrast"] .appearance-panel,
 html[data-theme="contrast"] .language-menu ul,
@@ -1289,11 +1291,11 @@ html[data-theme="contrast"] .select-setting select {
   border-width: 2px;
 }
 
-html[data-theme="contrast"] .portrait-frame::before {
+html[data-theme="contrast"] .hero-portrait-frame::before {
   border-color: var(--line);
 }
 
-html[data-theme="contrast"] .portrait-frame::after {
+html[data-theme="contrast"] .hero-portrait-frame::after {
   border-width: 2px;
 }
 
@@ -1319,6 +1321,10 @@ html[data-theme="contrast"] .portrait-frame::after {
     min-height: 32rem;
     border-inline-start: 0;
     border-block-start: 1px solid var(--line);
+  }
+
+  .hero-portrait-frame {
+    width: clamp(13rem, 28vw, 15.5rem);
   }
 
   .project-grid {
@@ -1410,6 +1416,13 @@ html[data-theme="contrast"] .portrait-frame::after {
     min-height: 25rem;
   }
 
+  .hero-portrait-frame {
+    width: min(48vw, 12.5rem);
+    inset-inline-end: 1rem;
+    inset-block-end: 1rem;
+    padding: 0.55rem;
+  }
+
   .o1 {
     width: 23rem;
     height: 23rem;
@@ -1441,12 +1454,6 @@ html[data-theme="contrast"] .portrait-frame::after {
   .about {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .portrait-frame {
-    width: min(100%, 20rem);
-    margin-block-start: 2rem;
-    margin-inline: auto;
   }
 
   .principles {
@@ -1546,6 +1553,19 @@ html[data-motion="reduce"] *::after {
 
   .profile-portrait {
     forced-color-adjust: none;
+  }
+
+  .hero-portrait-frame {
+    border: 2px solid CanvasText;
+    box-shadow: none;
+  }
+
+  .hero-portrait-frame::before {
+    border-color: CanvasText;
+  }
+
+  .hero-portrait-frame::after {
+    display: none;
   }
 
   :focus-visible {

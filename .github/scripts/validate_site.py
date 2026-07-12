@@ -201,8 +201,8 @@ def check_page_metadata(
         add_error(errors, relative_path, "must contain all seven project logo stages")
     if parser.classes["details-indicator"] != 7:
         add_error(errors, relative_path, "every project disclosure must use a vector indicator")
-    if parser.classes["portrait-frame"] != 1 or parser.classes["profile-portrait"] != 1:
-        add_error(errors, relative_path, "must contain one framed profile portrait")
+    if parser.classes["hero-portrait-frame"] != 1 or parser.classes["profile-portrait"] != 1:
+        add_error(errors, relative_path, "hero must contain one framed profile portrait")
     for control_id in ("language-options", "appearance-options", "theme-select"):
         if control_id not in parser.ids:
             add_error(errors, relative_path, f"dropdown control {control_id!r} is missing")
