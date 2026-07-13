@@ -343,7 +343,10 @@ ${career}
 
 const cacheableAssets = ["theme-init.js", "styles.css", "script.js", "assets/ahmed-othman-portrait.webp"];
 const assetVersions = Object.fromEntries(await Promise.all(cacheableAssets.map(async (asset) => {
-  const source = await readFile(join(root, asset));
+  let source = await readFile(join(root, asset));
+  if (asset.endsWith(".css") || asset.endsWith(".js")) {
+    source = Buffer.from(source.toString("utf8").replace(/\r\n/g, "\n"), "utf8");
+  }
   return [asset, createHash("sha256").update(source).digest("hex").slice(0, 12)];
 })));
 
