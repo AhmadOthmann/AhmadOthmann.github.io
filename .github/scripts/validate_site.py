@@ -197,9 +197,9 @@ def check_page_metadata(
         add_error(errors, relative_path, "must contain language and appearance dropdowns")
     if parser.classes["chevron"] != 2:
         add_error(errors, relative_path, "both dropdowns must use vector chevrons")
-    if parser.classes["project-visual"] != 7:
-        add_error(errors, relative_path, "must contain all seven project logo stages")
-    if parser.classes["details-indicator"] != 7:
+    if parser.classes["project-visual"] != 8:
+        add_error(errors, relative_path, "must contain all eight project logo stages")
+    if parser.classes["details-indicator"] != 8:
         add_error(errors, relative_path, "every project disclosure must use a vector indicator")
     if parser.classes["hero-portrait-frame"] != 1 or parser.classes["profile-portrait"] != 1:
         add_error(errors, relative_path, "hero must contain one framed profile portrait")

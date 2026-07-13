@@ -65,6 +65,13 @@
         "Webhooks"
       ]
     },
+    "impactAtlas": {
+      "title": "Impact Atlas \u2013 NGO-Nachrichtendienst",
+      "summary": "Ein KI-gestütztes Intelligence-Dashboard für humanitäre Organisationen mit Quellenerfassung, Priorisierung, Übersetzung und kompakten Einsatzbriefings.",
+      "detail": "Im Team entwickelt für den IOM × Sprints GenAI Hackathon (erster Platz). Impact Atlas erfasst RSS-Feeds und Web-Quellen, wendet KI-gestützte Relevanzanalyse an, extrahiert Förderfristen, übersetzt Inhalte in mehrere Sprachen und erstellt Executive-Briefings für humanitäre Einsatzteams.",
+      "action": "Repository ansehen",
+      "stack": ["FastAPI", "React", "OpenAI", "SQLite", "Docker"]
+    },
     "ackermann": {
       "title": "Autonomes Ackermann-Fahrzeug",
       "summary": "Ein ROS-basiertes autonomes Fahrzeug, das Lokalisierung, Pfadverfolgung und eingebettete Aktorsteuerung kombiniert.",

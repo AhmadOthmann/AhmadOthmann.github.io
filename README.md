@@ -63,7 +63,7 @@ GitHub may process standard service logs under its own policies. See [SECURITY.m
 | Identity | Project | Focus | Technologies |
 |---|---|---|---|
 | <img src="assets/project-logos/sofia-atlas-compass.webp" width="52" alt="Atlas Travel compass logo"> | [Sofia Atlas Travel](https://github.com/AhmadOthmann/Sofia-Atlas-Travel) | Autonomous multilingual sales qualification and workflow observability | HappyRobot, Next.js, AI agents, webhooks |
-| <img src="assets/project-logos/impact-atlas-ngo.webp" width="52" alt="Impact Atlas NGO logo"> | [Impact Atlas — NGO Intelligence](https://github.com/AhmadOthmann/ngo-intelligence-dashboard) | AI-powered humanitarian intelligence dashboard with source ingestion, translation and briefings | FastAPI, React, OpenAI, SQLite, Docker |
+| <img src="assets/project-logos/impact-atlas-ngo.webp" width="52" alt="Impact Atlas NGO logo"> | [Impact Atlas – NGO Intelligence](https://github.com/AhmadOthmann/ngo-intelligence-dashboard) | AI-powered humanitarian intelligence dashboard with source ingestion, translation and briefings | FastAPI, React, OpenAI, SQLite, Docker |
 | <img src="assets/project-logos/ackermann-vehicle.webp" width="52" alt="Ackermann vehicle logo"> | Autonomous Ackermann Vehicle | Localization, path tracking and embedded actuation | ROS, Gazebo, Raspberry Pi, IMU |
 | <img src="assets/project-logos/ev-abs-mpc.webp" width="52" alt="EV ABS MPC logo"> | EV Anti-lock Braking | Linear model predictive control for wheel-slip regulation | MATLAB/Simulink, MPC |
 | <img src="assets/project-logos/multi-manipulator.webp" width="52" alt="Multi-manipulator logo"> | Multi-Manipulator Pick and Place | Coordinated manipulation and visual localization | Robotics, ArUco, computer vision |

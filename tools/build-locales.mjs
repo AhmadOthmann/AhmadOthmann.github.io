@@ -14,6 +14,7 @@ const locales = {
 
 const projectDefinitions = [
   { key: "atlas", category: "ai", code: "AI-07", image: "/assets/project-logos/sofia-atlas-compass.webp", repo: "https://github.com/AhmadOthmann/Sofia-Atlas-Travel" },
+  { key: "impactAtlas", category: "ai", code: "AI-08", image: "/assets/project-logos/impact-atlas-ngo.webp", repo: "https://github.com/AhmadOthmann/ngo-intelligence-dashboard" },
   { key: "ackermann", category: "robotics", code: "ROB-01", image: "/assets/project-logos/ackermann-vehicle.webp" },
   { key: "abs", category: "control", code: "CTL-02", image: "/assets/project-logos/ev-abs-mpc.webp" },
   { key: "manipulator", category: "robotics", code: "ROB-03", image: "/assets/project-logos/multi-manipulator.webp" },

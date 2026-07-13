@@ -60,6 +60,13 @@
       "action": "View repository",
       "stack": ["HappyRobot", "Next.js", "AI Agents", "Webhooks"]
     },
+    "impactAtlas": {
+      "title": "Impact Atlas \u2013 NGO Intelligence",
+      "summary": "An AI-powered intelligence dashboard for humanitarian organisations, combining source ingestion, prioritization, translation and concise operational briefings.",
+      "detail": "Team-built for the IOM \u00d7 Sprints GenAI Hackathon (first place). Impact Atlas ingests RSS feeds and web sources, applies AI-driven relevance analysis, extracts funding deadlines, translates content across languages and generates executive briefings for humanitarian response teams.",
+      "action": "View repository",
+      "stack": ["FastAPI", "React", "OpenAI", "SQLite", "Docker"]
+    },
     "ackermann": {
       "title": "Autonomous Ackermann Vehicle",
       "summary": "A ROS-based autonomous vehicle combining localization, path tracking and embedded actuation.",
