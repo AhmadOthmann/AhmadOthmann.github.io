@@ -204,8 +204,6 @@
     "evidencePending": "Technical media and repository links will be added after source-material review.",
     "evidenceAvailable": "Source code, architecture, setup and demo documentation are available in the public repository.",
     "viewRepository": "View repository",
-    "viewPresentation": "View presentation",
-    "downloadSlides": "Download slides",
     "viewDetails": "View details"
   },
   "accessibility": {

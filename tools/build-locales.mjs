@@ -15,7 +15,7 @@ const locales = {
 const projectDefinitions = [
   { key: "atlas", category: "ai", code: "AI-07", image: "/assets/project-logos/sofia-atlas-compass.webp", repo: "https://github.com/AhmadOthmann/Sofia-Atlas-Travel" },
   { key: "impactAtlas", category: "ai", code: "AI-08", image: "/assets/project-logos/impact-atlas-ngo.webp", repo: "https://github.com/AhmadOthmann/ngo-intelligence-dashboard" },
-  { key: "quantumFinance", category: "ai", code: "AI-09", image: "/assets/project-logos/quantum-finance.webp", repo: "https://github.com/jonas221101/quantum-hackathon-finance", presentation: "/assets/presentations/quantum-finance-pitch.html", slides: "/assets/presentations/quantum-finance-pitch.pptx" },
+  { key: "quantumFinance", category: "ai", code: "AI-09", image: "/assets/project-logos/quantum-finance.webp", repo: "https://github.com/jonas221101/quantum-hackathon-finance" },
   { key: "ackermann", category: "robotics", code: "ROB-01", image: "/assets/project-logos/ackermann-vehicle.webp" },
   { key: "abs", category: "control", code: "CTL-02", image: "/assets/project-logos/ev-abs-mpc.webp" },
   { key: "manipulator", category: "robotics", code: "ROB-03", image: "/assets/project-logos/multi-manipulator.webp" },
@@ -106,17 +106,9 @@ function renderProject(definition, t) {
   const project = t.projects[definition.key];
   const category = t.filters[definition.category];
   const tags = project.stack.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("");
-  const links = [
-    definition.repo
-      ? `<a class="repository-link" href="${definition.repo}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.modal.viewRepository)} <span aria-hidden="true">↗</span><span class="visually-hidden"> (${escapeHtml(t.accessibility.externalLink)})</span></a>`
-      : "",
-    definition.presentation
-      ? `<a class="repository-link" href="${definition.presentation}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.modal.viewPresentation)} <span aria-hidden="true">↗</span><span class="visually-hidden"> (${escapeHtml(t.accessibility.externalLink)})</span></a>`
-      : "",
-    definition.slides
-      ? `<a class="repository-link" href="${definition.slides}" download>${escapeHtml(t.modal.downloadSlides)} <span aria-hidden="true">↓</span></a>`
-      : ""
-  ].filter(Boolean).join("\n");
+  const repository = definition.repo
+    ? `<a class="repository-link" href="${definition.repo}" target="_blank" rel="noopener noreferrer">${escapeHtml(t.modal.viewRepository)} <span aria-hidden="true">↗</span><span class="visually-hidden"> (${escapeHtml(t.accessibility.externalLink)})</span></a>`
+    : "";
 
   return `        <article class="project-card" id="project-${definition.key}" data-category="${definition.category}">
           <div class="project-visual has-image">
@@ -130,7 +122,7 @@ function renderProject(definition, t) {
             <summary>${escapeHtml(t.modal.viewDetails)} <svg class="details-indicator" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M3 8h10" /><path class="indicator-vertical" d="M8 3v10" /></svg></summary>
             <div class="project-detail">
               <p>${escapeHtml(project.detail)}</p>
-${links ? `              <div class="project-links">\n${links}\n              </div>` : ""}
+${repository ? `              ${repository}` : ""}
             </div>
           </details>
         </article>`;

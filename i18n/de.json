@@ -246,8 +246,6 @@
     "evidencePending": "Technische Medien und Repository-Links werden nach Sichtung des Ausgangsmaterials ergänzt.",
     "evidenceAvailable": "Quellcode, Architektur, Einrichtung und Demo-Dokumentation sind im öffentlichen Repository verfügbar.",
     "viewRepository": "Repository ansehen",
-    "viewPresentation": "Präsentation ansehen",
-    "downloadSlides": "Folien herunterladen",
     "viewDetails": "Details ansehen"
   },
   "accessibility": {
