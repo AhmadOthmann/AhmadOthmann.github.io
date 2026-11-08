@@ -67,6 +67,13 @@
       "action": "View repository",
       "stack": ["FastAPI", "React", "OpenAI", "SQLite", "Docker"]
     },
+    "quantumFinance": {
+      "title": "Quantum Finance Portfolio Decisions",
+      "summary": "A rule-preserving quantum portfolio model for transparent keep, switch or review decisions under changing assumptions.",
+      "detail": "Built with Jonas Sandelmann and the Finance track team for the TUM Quantum Hackathon. The QAOA model enforces valid three-of-six sector baskets, compares investor profiles and makes no claim of quantum advantage.",
+      "action": "View repository",
+      "stack": ["Python", "QAOA", "Quantum Computing", "Portfolio Optimisation"]
+    },
     "ackermann": {
       "title": "Autonomous Ackermann Vehicle",
       "summary": "A ROS-based autonomous vehicle combining localization, path tracking and embedded actuation.",
@@ -197,6 +204,8 @@
     "evidencePending": "Technical media and repository links will be added after source-material review.",
     "evidenceAvailable": "Source code, architecture, setup and demo documentation are available in the public repository.",
     "viewRepository": "View repository",
+    "viewPresentation": "View presentation",
+    "downloadSlides": "Download slides",
     "viewDetails": "View details"
   },
   "accessibility": {

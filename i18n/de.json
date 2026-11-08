@@ -72,6 +72,13 @@
       "action": "Repository ansehen",
       "stack": ["FastAPI", "React", "OpenAI", "SQLite", "Docker"]
     },
+    "quantumFinance": {
+      "title": "Quantenbasierte Portfolioentscheidungen",
+      "summary": "Ein regelkonformes Quantenmodell für transparente Keep-, Switch- oder Review-Entscheidungen bei wechselnden Annahmen.",
+      "detail": "Mit Jonas Sandelmann und dem Finance-Team für den TUM Quantum Hackathon entwickelt. Das QAOA-Modell erzwingt gültige Drei-aus-sechs-Sektorkörbe, vergleicht Anlegerprofile und behauptet keinen Quantenvorteil.",
+      "action": "Repository ansehen",
+      "stack": ["Python", "QAOA", "Quantencomputing", "Portfoliooptimierung"]
+    },
     "ackermann": {
       "title": "Autonomes Ackermann-Fahrzeug",
       "summary": "Ein ROS-basiertes autonomes Fahrzeug, das Lokalisierung, Pfadverfolgung und eingebettete Aktorsteuerung kombiniert.",
@@ -239,6 +246,8 @@
     "evidencePending": "Technische Medien und Repository-Links werden nach Sichtung des Ausgangsmaterials ergänzt.",
     "evidenceAvailable": "Quellcode, Architektur, Einrichtung und Demo-Dokumentation sind im öffentlichen Repository verfügbar.",
     "viewRepository": "Repository ansehen",
+    "viewPresentation": "Präsentation ansehen",
+    "downloadSlides": "Folien herunterladen",
     "viewDetails": "Details ansehen"
   },
   "accessibility": {
